@@ -1,12 +1,9 @@
-import { EmptyPackage } from "./EmptyPackage";
+import { EmptyPackage } from "./emptyPackage";
 import { FixedPackage } from "./fixedPackage";
 import { HourFlexPackage } from "./hourFlexPackage";
-import { SteppingPackage } from "./SteppingPackage";
 import { PackageType } from "./packageType";
-
-export interface IPackage {
-    monthlyBill(totalHours: number): number;
-}
+import { IPackage } from "./IPackage";
+import { SteppingPackage } from "./steppingPackage";
 
 export class PackageFactory {
     public static buildPackage(packageType: string): IPackage {

@@ -1,5 +1,4 @@
-import { IPackage } from "./package";
-
+import { IPackage } from "./IPackage";
 
 export class SteppingPackage implements IPackage {
     public monthlyBill(totalHours: number): number {

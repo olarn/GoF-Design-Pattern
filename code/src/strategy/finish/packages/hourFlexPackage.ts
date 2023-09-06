@@ -1,4 +1,4 @@
-import { IPackage } from "./package";
+import { IPackage } from "./IPackage";
 
 
 export class HourFlexPackage implements IPackage {
