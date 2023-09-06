@@ -1,7 +1,5 @@
 Refactoring Steps
-1. Rename Bill to IBill.
-2. Extract IBill as an interface class.
-3. Create IPackage as an interface class for Package.
-4. Create concrete classes for fixed, hour-flex
-5. Refactor billing class to use IPackage.
-6. Update unit tests to inject package concrete classes. 
+1. Create IPackage as an interface class for Package.
+2. Extract existing calculation code (in each if/else) by create concrete classes for fixed, hour-flex.
+3. Refactor billing class to use IPackage.
+4. Update unit tests to inject package concrete classes. 
