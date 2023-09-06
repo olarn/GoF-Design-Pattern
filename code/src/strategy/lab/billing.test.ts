@@ -36,4 +36,17 @@ describe('Generate monthly billing based-on total hours and package type', () =>
         // then
         expect(billing.monthlyBill()).toBe(0); 
     });
+
+    it('should return 75.0 for stepping package', () => { 
+        // given
+        const totalHours = 100.0;
+        // Stepping Package is 1THB for first 50 Hr, 0.5THB for the rest 
+        const packageType = PackageType.STEPPING;
+
+        // when
+        const billing = new Billing(totalHours, packageType);
+
+        // then
+        expect(billing.monthlyBill()).toBe(75.0);
+    });
 }); 
