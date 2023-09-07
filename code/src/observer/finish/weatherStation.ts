@@ -1,43 +1,23 @@
+import { WeatherData } from "./weatherData";
+
 export class WeatherStation {
-    private _temperature: number = 0.0;
-    public get temperature(): number {
-        return this._temperature;
+    private _weatherData: WeatherData = {} as WeatherData;
+    public get weatherData(): WeatherData {
+        return this._weatherData;
     }
-    public set temperature(value: number) {
-        this._temperature = value;
+    public set weatherData(value: WeatherData) {
+        this._weatherData = value;
         this.updateCurrentConditionsDisplay();
         this.updateForecastDisplay();
         this.updateStatisticsDisplay();
     }
 
-    private _humidity: number = 0.0;
-    public get humidity(): number {
-        return this._humidity;
-    }
-    public set humidity(value: number) {
-        this._humidity = value;
-        this.updateCurrentConditionsDisplay();
-        this.updateForecastDisplay();
-        this.updateStatisticsDisplay();
-    }
-
-    private _pressure: number = 0.0;
-    public get pressure(): number {
-        return this._pressure;
-    }
-    public set pressure(value: number) {
-        this._pressure = value;
-        this.updateCurrentConditionsDisplay();
-        this.updateForecastDisplay();
-        this.updateStatisticsDisplay();
-    }
-    
     updateCurrentConditionsDisplay() {
-        return `Current conditions: ${this.temperature}F degrees and ${this.humidity}% humidity`;
+        return `Current conditions: ${this._weatherData.temperature}F degrees and ${this._weatherData.humidity}% humidity`;
     }
 
     updateStatisticsDisplay() {
-        return `Avg/Max/Min temperature = ${this.temperature}/${this.humidity}/${this.pressure}`;
+        return `Avg/Max/Min temperature = ${this._weatherData.temperature}/${this._weatherData.humidity}/${this._weatherData.pressure}`;
     }
 
     updateForecastDisplay() {
