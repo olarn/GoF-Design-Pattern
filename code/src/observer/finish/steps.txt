@@ -1,0 +1,4 @@
+Observer efactoring Steps
+
+1. Refactor -> wrap temperature, humidity, pressure in to a class.
+2. 

@@ -1,13 +1,13 @@
 export class WeatherStation {
-    private _tempurature: number = 0.0;
-    public get tempurature(): number {
-        return this._tempurature;
+    private _temperature: number = 0.0;
+    public get temperature(): number {
+        return this._temperature;
     }
-    public set tempurature(value: number) {
-        this._tempurature = value;
-        this.updateCurrentConditionsDisplay(this._tempurature, this._humidity, this._pressure);
-        this.updateForecastDisplay(this._tempurature, this._humidity, this._pressure);
-        this.updateStatisticsDisplay(this._tempurature, this._humidity, this._pressure);
+    public set temperature(value: number) {
+        this._temperature = value;
+        this.updateCurrentConditionsDisplay(this._temperature, this._humidity, this._pressure);
+        this.updateForecastDisplay(this._temperature, this._humidity, this._pressure);
+        this.updateStatisticsDisplay(this._temperature, this._humidity, this._pressure);
     }
 
     private _humidity: number = 0.0;
@@ -16,9 +16,9 @@ export class WeatherStation {
     }
     public set humidity(value: number) {
         this._humidity = value;
-        this.updateCurrentConditionsDisplay(this._tempurature, this._humidity, this._pressure);
-        this.updateForecastDisplay(this._tempurature, this._humidity, this._pressure);
-        this.updateStatisticsDisplay(this._tempurature, this._humidity, this._pressure);
+        this.updateCurrentConditionsDisplay(this._temperature, this._humidity, this._pressure);
+        this.updateForecastDisplay(this._temperature, this._humidity, this._pressure);
+        this.updateStatisticsDisplay(this._temperature, this._humidity, this._pressure);
     }
 
     private _pressure: number = 0.0;
@@ -27,20 +27,20 @@ export class WeatherStation {
     }
     public set pressure(value: number) {
         this._pressure = value;
-        this.updateCurrentConditionsDisplay(this._tempurature, this._humidity, this._pressure);
-        this.updateForecastDisplay(this._tempurature, this._humidity, this._pressure);
-        this.updateStatisticsDisplay(this._tempurature, this._humidity, this._pressure);
+        this.updateCurrentConditionsDisplay(this._temperature, this._humidity, this._pressure);
+        this.updateForecastDisplay(this._temperature, this._humidity, this._pressure);
+        this.updateStatisticsDisplay(this._temperature, this._humidity, this._pressure);
     }
     
-    updateCurrentConditionsDisplay(tempurature: number, humidity: number, pressure: number) {
-        return `Current conditions: ${tempurature}F degrees and ${humidity}% humidity`;
+    updateCurrentConditionsDisplay(temperature: number, humidity: number, pressure: number) {
+        return `Current conditions: ${temperature}F degrees and ${humidity}% humidity`;
     }
 
-    updateStatisticsDisplay(tempurature: number, humidity: number, pressure: number) {
-        return `Avg/Max/Min temperature = ${tempurature}/${humidity}/${pressure}`;
+    updateStatisticsDisplay(temperature: number, humidity: number, pressure: number) {
+        return `Avg/Max/Min temperature = ${temperature}/${humidity}/${pressure}`;
     }
 
-    updateForecastDisplay(tempurature: number, humidity: number, pressure: number) {
+    updateForecastDisplay(temperature: number, humidity: number, pressure: number) {
         return `Forecast: More of the same`;
     }
 }

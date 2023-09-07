@@ -1,9 +1,9 @@
 import { WeatherStation } from "./weatherStation";
 
 describe('Weather station measurement changed', () => {
-    it('should be called when measurement changed', () => {
+    it('display should be called when measurement changed', () => {
         const weatherStation = new WeatherStation();
-        weatherStation.tempurature = 34.0;
+        weatherStation.temperature = 34.0;
         weatherStation.humidity = 0.8;
         weatherStation.pressure = 1.0;
 
