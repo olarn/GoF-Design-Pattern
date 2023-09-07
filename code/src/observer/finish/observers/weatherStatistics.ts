@@ -6,6 +6,7 @@ export class WeatherStatistic implements WeatherObserver {
 
     update(weatherData: WeatherData): void {
         this.weatherData = weatherData;
+        this.display();
     }
     
     display(): string {
