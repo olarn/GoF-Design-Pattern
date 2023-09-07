@@ -5,8 +5,11 @@ describe('Weather station measurement changed', () => {
     it('display should be called when measurement changed', () => {
         // given
         const weatherStation = new WeatherStation()
+
+        // when
         weatherStation.weatherData = new WeatherData(34.0, 0.8, 1.0);
 
+        // then
         expect(weatherStation.updateCurrentConditionsDisplay())
             .toBe('Current conditions: 34F degrees and 0.8% humidity');
         expect(weatherStation.updateStatisticsDisplay())
