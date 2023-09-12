@@ -1,3 +1,6 @@
 1. Create JsonBuilderDecorator interface class, with build(data) method.
 2. Let JsonBuilder implement interface.
-3. Create EncryptableJsonBuilder with encryptFields, that implement JsonBuilderDecorator.
+3. Create test for EncryptableJsonBuilder. 
+4. Create EncryptableJsonBuilder with encryptFields, that implement JsonBuilderDecorator.
+5. Create test for WrappedJsonBuilder.
+6. Create WrappedJsonBuilder class to pass the tests.

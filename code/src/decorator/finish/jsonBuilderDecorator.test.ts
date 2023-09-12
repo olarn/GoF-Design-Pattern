@@ -1,7 +1,6 @@
-import { EncryptableJsonBuilder } from "./encryptableJsonBuilder";
 import { JSONBuilder } from "./jsonBuilder";
-import { JSONBuilderDecorator } from "./jsonBuilderDecorator";
-import { WrappedJsonBuilder } from "./wrappedJsonBuilder";
+import { WrappedJsonBuilder } from "./decorator/wrappedJsonBuilder";
+import { EncryptableJsonBuilder } from "./decorator/encryptableJsonBuilder";
 
 describe('jsonBuilder decorator', () => {
     it('should return encrypted JSON string', () => {

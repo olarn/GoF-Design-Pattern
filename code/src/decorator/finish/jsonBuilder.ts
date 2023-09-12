@@ -1,4 +1,4 @@
-import { JSONBuilderDecorator } from "./jsonBuilderDecorator";
+import { JSONBuilderDecorator } from "./decorator/jsonBuilderDecorator";
 
 export class JSONBuilder implements JSONBuilderDecorator {
     withResponseWrapper = false;
