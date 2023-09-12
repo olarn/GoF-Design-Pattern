@@ -1,4 +1,6 @@
-export class JSONBuilder {
+import { JSONBuilderDecorator } from "./jsonBuilderDecorator";
+
+export class JSONBuilder implements JSONBuilderDecorator {
     withResponseWrapper = false;
     encryptFields: string[] = [];
 
