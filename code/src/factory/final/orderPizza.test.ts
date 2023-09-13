@@ -1,7 +1,7 @@
 import { PizzaType } from "./pizza";
 import { PizzaStore } from "./pizzaStore";
 
-describe('orderPizza from pizza store', () => {
+describe('orderPizza plain from pizza store', () => {
     it('should return a pizza', () => {
         const pizzaStore = new PizzaStore();
         const pizza = pizzaStore.orderPizza(PizzaType.Plain);
