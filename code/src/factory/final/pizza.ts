@@ -10,15 +10,25 @@ export class Pizza {
     }
 }
 
+export class PizzaOrder {
+    constructor(
+        public style: PizzaStyle,
+        public type: PizzaType,
+        public size: PizzaSize
+    ) {}
+}
+
 export enum PizzaStyle {
     Italian = 'Italian',
-    American = 'American'
+    American = 'American',
+    Undefined = 'Undefined'
 }
 
 export enum PizzaType {
     Cheese = 'Cheese',
     Seafood = 'Seafood',
-    Classic = 'Classic'
+    Classic = 'Classic',
+    Undefined = 'Undefined'
 }
 
 export enum PizzaSize {
