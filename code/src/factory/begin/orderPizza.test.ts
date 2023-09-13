@@ -1,22 +1,22 @@
-import { PizzaType } from "./pizza";
+import { PizzaSize, PizzaStyle, PizzaType } from "./pizza";
 import { PizzaStore } from "./pizzaStore";
 
 describe('orderPizza from pizza store', () => {
-    it('should return a pizza', () => {
+    it('should return an Italian pizza', () => {
         const pizzaStore = new PizzaStore();
-        const pizza = pizzaStore.orderPizza(PizzaType.Plain);
-        expect(pizza.describe()).toEqual('Plain Pizza, cut 6 pieces, medium boxed');
+        const pizza = pizzaStore.orderPizza(PizzaStyle.Italian, PizzaType.Classic, PizzaSize.Small);
+        expect(pizza.description()).toBe('Pizza Classic, Small, Thin, Mozzarella, Tomato, Basil');
     });
 
-    it('should return a cheese pizza', () => {
+    it('should return an Italian cheese pizza', () => {
         const pizzaStore = new PizzaStore();
-        const pizza = pizzaStore.orderPizza(PizzaType.Cheese);
-        expect(pizza.describe()).toEqual('Pizza with cheese, cut 6 pieces, medium boxed');
+        const pizza = pizzaStore.orderPizza(PizzaStyle.Italian, PizzaType.Cheese, PizzaSize.Small);
+        expect(pizza.description()).toBe('Pizza Cheese, Small, Thick, Parmesan, Basil, Olive, Onion');
     });
 
-    it('should return a seafood pizza', () => {
+    it('should return an American seafood pizza', () => {
         const pizzaStore = new PizzaStore();
-        const pizza = pizzaStore.orderPizza(PizzaType.Seafood);
-        expect(pizza.describe()).toEqual('Pizza with seafood ingrediants, cut 6 pieces, medium boxed');
+        const pizza = pizzaStore.orderPizza(PizzaStyle.American, PizzaType.Seafood, PizzaSize.Small);
+        expect(pizza.description()).toBe('Pizza Seafood, Small, Thick, Mozzarella, Tomato, Onion, Shrimp, Tuna');
     });
 });
