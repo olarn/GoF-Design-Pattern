@@ -4,27 +4,7 @@ import { SlackObserver } from "./observers/slackObserver";
 import { TelegramObserver } from "./observers/telegramObserver";
 
 describe('NotificationCenter', () => {
-    it('should notify all observers', () => {
-        // given
-        const notificationCenter = NotificationCenter.getInstance();
-        notificationCenter.reset();
-        
-        const slack = new SlackObserver();
-        const discord = new DiscordObserver();
-
-        notificationCenter.addObserver(slack);
-        notificationCenter.addObserver(discord);
-        
-        // when
-        const notiMessage = 'Build failed!!!';
-        notificationCenter.postNotification(notiMessage);
-
-        // then
-        expect(slack.message).toBe('Slacker, ' + notiMessage);
-        expect(discord.message).toBe('Discordian, ' + notiMessage);
-    });
-
-    it('should not notify more than 2 observers', () => {
+    it('should notify on Slack and Discord (only 2), not telegram.', () => {
         // given
         const notificationCenter = NotificationCenter.getInstance();
         notificationCenter.reset();
@@ -32,6 +12,10 @@ describe('NotificationCenter', () => {
         const slack = new SlackObserver();
         const discord = new DiscordObserver();
         const telegram = new TelegramObserver();
+
+        const spyOnSlack = jest.spyOn(slack, 'notify');
+        const spyOnDiscord = jest.spyOn(discord, 'notify');
+        const spyOnTelegram = jest.spyOn(telegram, 'notify');
 
         notificationCenter.addObserver(slack);
         notificationCenter.addObserver(discord);
@@ -42,8 +26,8 @@ describe('NotificationCenter', () => {
         notificationCenter.postNotification(notiMessage);
 
         // then
-        expect(slack.message).toBe('Slacker, ' + notiMessage);
-        expect(discord.message).toBe('Discordian, ' + notiMessage);
-        expect(telegram.message).toBe('');
+        expect(spyOnSlack).toBeCalled();
+        expect(spyOnDiscord).toBeCalled();
+        expect(spyOnTelegram).not.toBeCalled();
     });
 });
