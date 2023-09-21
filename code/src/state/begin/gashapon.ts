@@ -66,6 +66,13 @@ export class Gashapon {
         throw new Error("The machine has some problem. Please eject coins."); 
     }
 
+    reload(capsules: GashaponCapsule[]) {
+        capsules.forEach(capsule => {
+            this.remainCapsule.push(capsule);
+        });
+        this.state = GashaponMachineState.ready;
+    }
+
     // -------------------- Gashapon Machine (or Context) methods
 
     getState(): GashaponMachineState {
@@ -74,13 +81,6 @@ export class Gashapon {
 
     getCoins(): number {
         return this.coins;
-    }
-
-    reload(capsules: GashaponCapsule[]) {
-        capsules.forEach(capsule => {
-            this.remainCapsule.push(capsule);
-        });
-        this.state = GashaponMachineState.ready;
     }
 
     getRemainCapsule(): number {

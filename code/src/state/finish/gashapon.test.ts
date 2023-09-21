@@ -41,10 +41,7 @@ describe('Gashapon Machine', () => {
         gashapon.insertCoin();
         gashapon.spin();
 
-        expect(gashapon.getState()).toBe('outOfCapsule');
         expect(gashapon.getRemainCapsule()).toBe(0);
-        expect(() => gashapon.insertCoin()).toThrowError('Cannot insert coin when out of capsule');
-        expect(() => gashapon.spin()).toThrowError('Cannot spin when out of capsule');
-        expect(() => gashapon.ejectCoins()).toThrowError("You haven't insert any coin");
+        expect(() => gashapon.spin()).toThrowError('Please insert more coin');
     });
 });

@@ -1,3 +1,10 @@
-1. Create interface class for state. Add Gashapon's action methods to the interface class. 
-2. Create Concrete classes for each state.
+1. Create interface class for state with methos :- insertCoin, ejectCoins, and spin.
+2. Create Concrete classes with constructor accept gashapon object for each state (with not implemented Error is just OK right now).
+3. Add setState(state: ) for Gashapon (context) class.
+
+4. Now. Start to implement methods for ReadyState class.
+    4.1 Add setCoin(): void method for Gashapon class.
+    4.2 
+
+Add Gashapon's action methods to the interface class. 
 3. Copy logic from Gashapon class to each state.
