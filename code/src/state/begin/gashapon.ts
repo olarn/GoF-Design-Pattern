@@ -54,10 +54,10 @@ export class Gashapon {
 
     spin(): GashaponCapsule {
         if (this.state === GashaponState.ready || this.state === GashaponState.hasCoin) {
-            throw new Error("Please insert more coin");
+            throw new Error('Please insert more coin');
         }
         if (this.state === GashaponState.outOfCapsule) {
-            throw new Error("Please insert more coin");
+            throw new Error('Cannot spin when out of capsule');
         }
 
         this.coins = 0;

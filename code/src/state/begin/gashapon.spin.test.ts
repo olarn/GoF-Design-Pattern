@@ -18,7 +18,7 @@ describe('Spin Gashapon', () => {
     });
 
     it('should throw error if spin while state is `outOfCapsule`', () => {
-        expect(() => gashapon.spin()).toThrowError("Please insert more coin");
+        expect(() => gashapon.spin()).toThrowError('Cannot spin when out of capsule');
     });
 
     it('should be able to spin when state is `readyToSpin`', () => {
