@@ -1,4 +1,6 @@
-import { Gashapon, GashaponCapsule, GashaponState } from "./gashapon";
+import { Gashapon } from "./gashapon";
+import { GashaponCapsule } from "./gashaponCapsule";
+import { GashaponMachineState } from "./gashaponMachineState";
 
 describe('Insert coins', () => {
     var gashapon = new Gashapon();
@@ -39,14 +41,14 @@ describe('Insert coins', () => {
 
         // when
         gashapon.insertCoin();
-        expect(gashapon.getState()).toBe(GashaponState.hasCoin);
+        expect(gashapon.getState()).toBe(GashaponMachineState.hasCoin);
         
         gashapon.insertCoin();
         gashapon.insertCoin();
         gashapon.insertCoin();
 
         // then
-        expect(gashapon.getState()).toBe(GashaponState.readyToSpin);
+        expect(gashapon.getState()).toBe(GashaponMachineState.readyToSpin);
     });
 
     it('should throw error if insert coin and current state is `outOfStock`', () => {

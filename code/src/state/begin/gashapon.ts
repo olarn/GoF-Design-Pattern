@@ -1,62 +1,53 @@
-export enum GashaponState {
-    ready = 'ready',
-    hasCoin = 'hasCoin',
-    readyToSpin = 'readyToSpin',
-    outOfCapsule = 'outOfCapsule',
-}
-
-export class GashaponCapsule {
-    constructor(private toy: string) {}
-    getToy(): string {
-        return this.toy;
-    }
-}
+import { GashaponCapsule } from "./gashaponCapsule";
+import { GashaponMachineState } from "./gashaponMachineState";
 
 export class Gashapon {
     private remainCapsule: GashaponCapsule[] = [];
     private needs = 4;
     private coins = 0;
-    private state: GashaponState = GashaponState.outOfCapsule;
+    private state: GashaponMachineState = GashaponMachineState.outOfCapsule;
+
+    // -------------------- State methods
 
     insertCoin() {
-        if (this.state === GashaponState.readyToSpin) {
+        if (this.state === GashaponMachineState.readyToSpin) {
             throw new Error('Cannot insert coin when ready to spin');
         }
-        if (this.state === GashaponState.outOfCapsule) {
+        if (this.state === GashaponMachineState.outOfCapsule) {
             throw new Error('Cannot insert coin when out of capsule');
         }
-        if (this.state == GashaponState.ready || this.state == GashaponState.hasCoin) {
+        if (this.state == GashaponMachineState.ready || this.state == GashaponMachineState.hasCoin) {
             this.coins += 1;
             if (this.coins < this.needs) { 
-                this.state = GashaponState.hasCoin;
+                this.state = GashaponMachineState.hasCoin;
             }
             if (this.coins == this.needs) {
-                this.state = GashaponState.readyToSpin;
+                this.state = GashaponMachineState.readyToSpin;
             }
         }
     }
 
     ejectCoins(): number {
-        if (this.state === GashaponState.hasCoin || this.state === GashaponState.readyToSpin) {
+        if (this.state === GashaponMachineState.ready) {
+            throw new Error("You haven't insert any coin");
+        }
+        if (this.state === GashaponMachineState.outOfCapsule) {
+            throw new Error("You haven't insert any coin");
+        }
+        if (this.state === GashaponMachineState.hasCoin || this.state === GashaponMachineState.readyToSpin) {
             const coinToReturn = this.coins;
             this.coins = 0;
-            this.state = GashaponState.ready;
+            this.state = GashaponMachineState.ready;
             return coinToReturn;    
-        }
-        if (this.state === GashaponState.ready) {
-            throw new Error("You haven't insert any coin");
-        }
-        if (this.state === GashaponState.outOfCapsule) {
-            throw new Error("You haven't insert any coin");
         }
         return 0;
     }
 
     spin(): GashaponCapsule {
-        if (this.state === GashaponState.ready || this.state === GashaponState.hasCoin) {
+        if (this.state === GashaponMachineState.ready || this.state === GashaponMachineState.hasCoin) {
             throw new Error('Please insert more coin');
         }
-        if (this.state === GashaponState.outOfCapsule) {
+        if (this.state === GashaponMachineState.outOfCapsule) {
             throw new Error('Cannot spin when out of capsule');
         }
 
@@ -65,9 +56,9 @@ export class Gashapon {
         if (capsule) {
             this.remainCapsule.slice(0);
             if (this.remainCapsule.length == 0) {
-                this.state = GashaponState.outOfCapsule;
+                this.state = GashaponMachineState.outOfCapsule;
             } else {
-                this.state = GashaponState.ready;
+                this.state = GashaponMachineState.ready;
             }
             return capsule
         }
@@ -75,7 +66,9 @@ export class Gashapon {
         throw new Error("The machine has some problem. Please eject coins."); 
     }
 
-    getState(): GashaponState {
+    // -------------------- Gashapon Machine (or Context) methods
+
+    getState(): GashaponMachineState {
         return this.state;
     }
 
@@ -87,7 +80,7 @@ export class Gashapon {
         capsules.forEach(capsule => {
             this.remainCapsule.push(capsule);
         });
-        this.state = GashaponState.ready;
+        this.state = GashaponMachineState.ready;
     }
 
     getRemainCapsule(): number {

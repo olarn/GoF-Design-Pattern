@@ -1,4 +1,6 @@
-import { Gashapon, GashaponCapsule, GashaponState } from "./gashapon";
+import { Gashapon } from "./gashapon";
+import { GashaponCapsule } from "./gashaponCapsule";
+import { GashaponMachineState } from "./gashaponMachineState";
 
 describe('Eject coins', () => {
     var gashapon = new Gashapon();
@@ -18,7 +20,7 @@ describe('Eject coins', () => {
 
         // then
         expect(returnedCoins).toBe(2);
-        expect(gashapon.getState()).toBe(GashaponState.ready);
+        expect(gashapon.getState()).toBe(GashaponMachineState.ready);
     });
 
     it('should throw error if eject coins when state is `ready`', () => {

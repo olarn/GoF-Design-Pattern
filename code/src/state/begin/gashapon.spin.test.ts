@@ -1,4 +1,6 @@
-import { Gashapon, GashaponCapsule, GashaponState } from "./gashapon";
+import { Gashapon, } from "./gashapon";
+import { GashaponCapsule } from "./gashaponCapsule";
+import { GashaponMachineState } from "./gashaponMachineState";
 
 describe('Spin Gashapon', () => {
     var gashapon = new Gashapon();
@@ -36,7 +38,7 @@ describe('Spin Gashapon', () => {
 
         // then
         expect(nami?.getToy()).toBe('Nami');
-        expect(gashapon.getState()).toBe(GashaponState.ready);
+        expect(gashapon.getState()).toBe(GashaponMachineState.ready);
 
         // when
         gashapon.insertCoin();
@@ -47,6 +49,6 @@ describe('Spin Gashapon', () => {
 
         // then
         expect(luffy?.getToy()).toBe('Luffy');
-        expect(gashapon.getState()).toBe(GashaponState.outOfCapsule);
+        expect(gashapon.getState()).toBe(GashaponMachineState.outOfCapsule);
     });
 });

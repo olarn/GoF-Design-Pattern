@@ -1,4 +1,6 @@
-import { Gashapon, GashaponCapsule, GashaponState } from "./gashapon";
+import { Gashapon } from "./gashapon";
+import { GashaponCapsule } from "./gashaponCapsule";
+import { GashaponMachineState } from "./gashaponMachineState";
 
 describe('Init Gashapon', () => {
     var gashapon = new Gashapon();
@@ -13,13 +15,13 @@ describe('Init Gashapon', () => {
     });
 
     it('should be out of capsule when init', () => {
-        expect(gashapon.getState()).toBe(GashaponState.outOfCapsule);
+        expect(gashapon.getState()).toBe(GashaponMachineState.outOfCapsule);
         expect(gashapon.getRemainCapsule()).toBe(0);
     });
 
     it('should be ready when reload with capsule', () => {
         gashapon.reload([new GashaponCapsule('Luffy')]);
-        expect(gashapon.getState()).toBe(GashaponState.ready);
+        expect(gashapon.getState()).toBe(GashaponMachineState.ready);
     });
 });
     
