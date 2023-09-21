@@ -1,0 +1,3 @@
+1. Create interface class for state. Add Gashapon's action methods to the interface class. 
+2. Create Concrete classes for each state.
+3. Copy logic from Gashapon class to each state.
