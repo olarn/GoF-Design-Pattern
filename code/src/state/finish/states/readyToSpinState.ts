@@ -14,13 +14,13 @@ export class readyToSpinState implements GashaponState {
         return this.gashapon.returnCoins();
     }
 
-    spin(): GashaponCapsule {
+    spin(): GashaponCapsule[] {
         const capsule = this.gashapon.issueCapsule();
         if (this.gashapon.getRemainCapsule() === 0) {
             this.gashapon.setState(GashaponMachineState.outOfCapsule);
         } else {
             this.gashapon.setState(GashaponMachineState.ready);
         }
-        return capsule;
+        return [capsule];
     }
 }

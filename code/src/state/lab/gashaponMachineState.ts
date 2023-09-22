@@ -3,4 +3,5 @@ export enum GashaponMachineState {
     hasCoin = 'hasCoin',
     readyToSpin = 'readyToSpin',
     outOfCapsule = 'outOfCapsule',
+    winnerChanceToSpin = 'winnerChanceToSpin',
 }

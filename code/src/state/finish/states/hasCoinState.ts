@@ -20,7 +20,7 @@ export class hasCoinState implements GashaponState {
         return this.gashapon.returnCoins();
     }
 
-    spin(): GashaponCapsule {
+    spin(): GashaponCapsule[] {
         throw new Error('Please insert more coin');
     }
 }

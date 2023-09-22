@@ -14,3 +14,15 @@
     4.1 implement one-by-one concrete method based-on existing Gashapon code.
     4.2 Refactor Gashapon code when state needs to call Gashapon methods.
     4.3 Repeat until done all concrete state classes.
+
+Add new feature -> 50% issue 2 capsules.
+
+1. Change spin() return value to be an array.
+2. Make fail test to pass.
+3. Write test fo WinnerChanceToSpin class to expect 50% return 2 capsule.
+4. Add enum winnerChanceToSpin into GashaponMachineState.
+5. Write code to pass.
+
+Add 10% chance to get winnerChanceToSpin
+
+

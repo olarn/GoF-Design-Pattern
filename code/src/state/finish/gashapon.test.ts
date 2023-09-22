@@ -33,7 +33,8 @@ describe('Gashapon Machine', () => {
         gashapon.insertCoin();
         gashapon.insertCoin();
         const capsult = gashapon.spin();
-        expect(capsult?.getToy()).toBe('Jinbei');
+        expect(capsult.length).toBe(1); 
+        expect(capsult[0]?.getToy()).toBe('Jinbei');
     
         gashapon.insertCoin();
         gashapon.insertCoin();

@@ -17,7 +17,7 @@ export class readyState implements GashaponState {
     ejectCoins(): number {
         throw new Error("You haven't insert any coin");
     }
-    spin(): GashaponCapsule {
+    spin(): GashaponCapsule[] {
         throw new Error('Please insert more coin');
     }
 }

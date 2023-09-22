@@ -8,7 +8,7 @@ export class outOfCapsuleState implements GashaponState {
     ejectCoins(): number {
         throw new Error("You haven't insert any coin");
     }
-    spin(): GashaponCapsule {
+    spin(): GashaponCapsule[] {
         throw new Error('Cannot spin when out of capsule');
     }
 }

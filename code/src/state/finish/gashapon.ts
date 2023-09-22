@@ -18,7 +18,7 @@ export class Gashapon {
         [GashaponMachineState.outOfCapsule]: new outOfCapsuleState(),
     };
 
-    // -------------------- State methods
+    // === State methods
 
     insertCoin() {
         this.states[this.state].insertCoin();
@@ -28,7 +28,7 @@ export class Gashapon {
         return this.states[this.state].ejectCoins();
     }
 
-    spin(): GashaponCapsule {
+    spin(): GashaponCapsule[] {
         return this.states[this.state].spin();
     }
 
@@ -46,20 +46,11 @@ export class Gashapon {
         }
 
         this.remainCapsule.slice(0);
-        if (this.remainCapsule.length == 0) {
-            this.state = GashaponMachineState.outOfCapsule;
-        } else {
-            this.state = GashaponMachineState.ready;
-        }
-
-        // reset coins only machine issue capsule, 
-        // so that user can eject coin if any issue happends.
         this.coins = 0;
-
         return capsule
 }
 
-    // -------------------- Gashapon Machine (or Context) methods
+    // === Gashapon Machine (or Context) methods
 
     getState(): GashaponMachineState {
         return this.state;
