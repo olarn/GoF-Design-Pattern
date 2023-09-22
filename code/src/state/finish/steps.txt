@@ -1,11 +1,16 @@
-1. Create interface class for state with methos :- insertCoin, ejectCoins, and spin.
-2. Create Concrete classes with constructor accept gashapon object for each state (with not implemented Error is just OK right now).
-3. Add setState(state: ) for Gashapon (context) class.
+1. Create interface class "GashaponState" :- insertCoin, ejectCoins, and spin.
+2. Create Concrete classes for readyState, hasCoinState, readyToSpin, outOfCapsuleState that comform interface class.
+3. Create key/values in Gashapon class to store states (avoid circular reference).
 
-4. Now. Start to implement methods for ReadyState class.
-    4.1 Add constructor for concrete state classes.
-    4.2 Add setCoin(): void method for Gashapon class.
-    4.3 Add setCoin(): void
-5. Continue to add concrete classes.
-6. Implement concrete class method.
-7. Change GashaponState type from GashaponMachineState to use interface class (GashaponState).
+    private state: GashaponMachineState = GashaponMachineState.outOfCapsule;
+    private states: GashaponDictionary = {
+        [GashaponMachineState.ready]: new readyState(this),
+        [GashaponMachineState.hasCoin]: new hasCoinState(this),
+        [GashaponMachineState.readyToSpin]: new readyToSpinState(this),
+        [GashaponMachineState.outOfCapsule]: new outOfCapsuleState(),
+    };
+
+4. Now. Start to implement methods for Concrete class.
+    4.1 implement one-by-one concrete method based-on existing Gashapon code.
+    4.2 Refactor Gashapon code when state needs to call Gashapon methods.
+    4.3 Repeat until done all concrete state classes.
