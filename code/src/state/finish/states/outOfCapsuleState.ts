@@ -1,10 +1,7 @@
-import { Gashapon } from "../gashapon";
 import { GashaponCapsule } from "../gashaponCapsule";
 import { GashaponState } from "./gashaponState";
 
-export class OutofCapsuleState implements GashaponState {
-    constructor(private gashapon: Gashapon) {}
-
+export class outOfCapsuleState implements GashaponState {
     insertCoin(): void {
         throw new Error('Cannot insert coin when out of capsule');
     }
