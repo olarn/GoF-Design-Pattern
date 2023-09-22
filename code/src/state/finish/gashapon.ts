@@ -9,20 +9,17 @@ export class Gashapon {
     private coins = 0;
     private state: GashaponState = new OutofCapsuleState(this); 
 
-    // -------------------- State methods
+    // === Perform State methods
 
     insertCoin() {
         this.state.insertCoin();
     }
-
     ejectCoins(): number {
         return this.state.ejectCoins();
     }
-
-    spin(): GashaponCapsule {
+    spin(): GashaponCapsule {   
         return this.state.spin();
     }
-
     reload(capsules: GashaponCapsule[]) {
         capsules.forEach(capsule => {
             this.remainCapsule.push(capsule);
@@ -30,18 +27,18 @@ export class Gashapon {
         this.setState(new ReadyState(this));
     }
 
-    // -------------------- Gashapon Machine (or Context) methods
+    // === Gashapon Machine (or Context) methods that will be called by State
 
     setState(state: GashaponState): void {
         this.state = state;
     }
 
-    setCoin(): void {
-        this.coins += 1;
-    }
-
     getCoins(): number {
         return this.coins;
+    }
+    
+    setCoin(): void {
+        this.coins += 1;
     }
 
     releaseCoins(): number {
