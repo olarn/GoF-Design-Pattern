@@ -3,8 +3,9 @@
 3. Add setState(state: ) for Gashapon (context) class.
 
 4. Now. Start to implement methods for ReadyState class.
-    4.1 Add setCoin(): void method for Gashapon class.
-    4.2 
-
-Add Gashapon's action methods to the interface class. 
-3. Copy logic from Gashapon class to each state.
+    4.1 Add constructor for concrete state classes.
+    4.2 Add setCoin(): void method for Gashapon class.
+    4.3 Add setCoin(): void
+5. Continue to add concrete classes.
+6. Implement concrete class method.
+7. Change GashaponState type from GashaponMachineState to use interface class (GashaponState).

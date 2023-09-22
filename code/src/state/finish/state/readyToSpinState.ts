@@ -10,11 +10,13 @@ export class ReadyToSpinState implements GashaponState {
     insertCoin(): void {
         throw new Error('Cannot insert coin when ready to spin');
     }
+
     ejectCoins(): number {
         const coinToReturn = this.gashapon.releaseCoins();
         this.gashapon.setState(new ReadyState(this.gashapon));
         return coinToReturn;    
     }
+    
     spin(): GashaponCapsule {
         if (this.gashapon.getRemainCapsule() == 0) {
             this.gashapon.setState(new OutofCapsuleState(this.gashapon));

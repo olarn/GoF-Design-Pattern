@@ -1,5 +1,4 @@
 import { GashaponCapsule } from "./gashaponCapsule";
-import { GashaponMachineState } from "./gashaponMachineState";
 import { GashaponState } from "./state/gashaponState";
 import { OutofCapsuleState } from "./state/outOfCapsuleState";
 import { ReadyState } from "./state/readyState";

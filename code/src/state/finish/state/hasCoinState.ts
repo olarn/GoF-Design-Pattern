@@ -15,12 +15,14 @@ export class HasCoinState implements GashaponState {
             this.gashapon.setState(new ReadyToSpinState(this.gashapon));
         }
     }
+    
     ejectCoins(): number {
         const coinToReturn = this.gashapon.getCoins();
         this.gashapon.releaseCoins();
         this.gashapon.setState(new ReadyState(this.gashapon));
         return coinToReturn;    
     }
+
     spin(): GashaponCapsule {
         throw new Error('Please insert more coin');
     }
