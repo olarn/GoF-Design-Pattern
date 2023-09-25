@@ -1,21 +1,22 @@
 import { GashaponCapsule } from "./gashaponCapsule";
 import { GashaponMachineState } from "./gashaponMachineState";
 import { GashaponDictionary } from "./states/gashaponState";
-import { hasCoinState } from "./states/hasCoinState";
-import { outOfCapsuleState } from "./states/outOfCapsuleState";
-import { readyState } from "./states/readyState";
-import { readyToSpinState } from "./states/readyToSpinState";
+import { HasCoinState } from "./states/hasCoinState";
+import { OutOfCapsuleState } from "./states/outOfCapsuleState";
+import { ReadyState } from "./states/readyState";
+import { ReadyToSpinState } from "./states/readyToSpinState";
 
 export class Gashapon {
     private remainCapsule: GashaponCapsule[] = [];
     private requireCoins = 4;
     private coins = 0;
     private state: GashaponMachineState = GashaponMachineState.outOfCapsule;
-    private states: GashaponDictionary = {
-        [GashaponMachineState.ready]: new readyState(this),
-        [GashaponMachineState.hasCoin]: new hasCoinState(this),
-        [GashaponMachineState.readyToSpin]: new readyToSpinState(this),
-        [GashaponMachineState.outOfCapsule]: new outOfCapsuleState(),
+    states: GashaponDictionary = {
+        [GashaponMachineState.ready]: new ReadyState(this),
+        [GashaponMachineState.hasCoin]: new HasCoinState(this),
+        [GashaponMachineState.readyToSpin]: new ReadyToSpinState(this),
+        [GashaponMachineState.outOfCapsule]: new OutOfCapsuleState(),
+        [GashaponMachineState.winnerChanceToSpin]: new ReadyToSpinState(this),
     };
 
     // === State methods

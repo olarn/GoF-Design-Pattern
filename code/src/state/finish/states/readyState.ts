@@ -3,7 +3,7 @@ import { GashaponCapsule } from "../gashaponCapsule";
 import { GashaponMachineState } from "../gashaponMachineState";
 import { GashaponState } from "./gashaponState";
 
-export class readyState implements GashaponState {
+export class ReadyState implements GashaponState {
     constructor(private gashapon: Gashapon) { }
     
     insertCoin(): void {
