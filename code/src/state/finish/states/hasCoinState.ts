@@ -11,7 +11,11 @@ export class HasCoinState implements GashaponState {
         if (this.gashapon.getCoins() < this.gashapon.getRequireCoins()) {
             this.gashapon.setState(GashaponMachineState.hasCoin);
         } else {
-            this.gashapon.setState(GashaponMachineState.readyToSpin);
+            if (this.tenPercentChanceToGetWinnerSpin()) {
+                this.gashapon.setState(GashaponMachineState.winnerChanceToSpin);
+            } else {
+                this.gashapon.setState(GashaponMachineState.readyToSpin);
+            }
         }
     }
 
@@ -22,5 +26,9 @@ export class HasCoinState implements GashaponState {
 
     spin(): GashaponCapsule[] {
         throw new Error('Please insert more coin');
+    }
+
+    public tenPercentChanceToGetWinnerSpin(): boolean {
+        return Math.random() < 0.1;
     }
 }

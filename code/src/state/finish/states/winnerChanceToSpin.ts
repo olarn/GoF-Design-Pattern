@@ -20,11 +20,11 @@ export class WinnerChanceToSpin implements GashaponState {
     }
 
     spin(): GashaponCapsule[] {
-        var capsules: GashaponCapsule[] = [];
+        var returnCapsules: GashaponCapsule[] = [];
         
-        capsules.push(this.gashapon.issueCapsule());
+        returnCapsules.push(this.gashapon.issueCapsule());
         if (this.winTheChance()) {
-            capsules.push(this.gashapon.issueCapsule());
+            returnCapsules.push(this.gashapon.issueCapsule());
         }
         
         this.gashapon.setState(
@@ -33,6 +33,6 @@ export class WinnerChanceToSpin implements GashaponState {
                 : GashaponMachineState.ready
         )
 
-        return capsules;
+        return returnCapsules;
    }
 }
