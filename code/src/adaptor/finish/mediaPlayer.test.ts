@@ -1,9 +1,11 @@
 import { MediaPlayer } from "./mediaPlayer";
 import { SpotifyAPI } from "./spotifyAPI";
+import { Youtube } from "./youtubeAPI";
+import { YoutubeAdaptor } from "./youtubeAdaptor";
 
 describe('Media Player', () => {
 
-    it('should get nothing if not specific provider.', () => {
+    it('should be able to play musics from Spotify playlist.', () => {
         const mediaPlayer = new MediaPlayer();
         expect(mediaPlayer.connect()).toEqual('');
         expect(mediaPlayer.getPlaylist()).toEqual([]);
@@ -17,5 +19,21 @@ describe('Media Player', () => {
         expect(mediaPlayer.play(playlist[0])).toEqual('Playing spotify.song1');
         expect(mediaPlayer.play(playlist[1])).toEqual('Playing spotify.song2');
         expect(mediaPlayer.play(playlist[2])).toEqual('Playing spotify.song3');
+    });
+
+    it('should be able to play musics from Youtube playlist.', () => {
+        const mediaPlayer = new MediaPlayer();
+        expect(mediaPlayer.connect()).toEqual('');
+        expect(mediaPlayer.getPlaylist()).toEqual([]);
+
+        mediaPlayer.setProvider(new YoutubeAdaptor());        
+        expect(mediaPlayer.connect()).toEqual('Connected to Youtube');
+
+        const playlist = mediaPlayer.getPlaylist();
+        expect(playlist).toEqual(['youtube.song1', 'youtube.song2', 'youtube.song3']);
+
+        expect(mediaPlayer.play(playlist[0])).toEqual('Playing youtube.song1');
+        expect(mediaPlayer.play(playlist[1])).toEqual('Playing youtube.song2');
+        expect(mediaPlayer.play(playlist[2])).toEqual('Playing youtube.song3');
     });
 });
