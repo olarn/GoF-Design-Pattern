@@ -1,7 +1,7 @@
 import { MediaPlayer } from "./mediaPlayer";
 import { SpotifyAPI } from "./spotifyAPI";
 import { Youtube } from "./youtubeAPI";
-import { YoutubeAdaptor } from "./youtubeAdaptor";
+import { YoutubeAdapter } from "./youtubeAdapter";
 
 describe('Media Player', () => {
 
@@ -26,7 +26,7 @@ describe('Media Player', () => {
         expect(mediaPlayer.connect()).toEqual('');
         expect(mediaPlayer.getPlaylist()).toEqual([]);
 
-        mediaPlayer.setProvider(new YoutubeAdaptor());        
+        mediaPlayer.setProvider(new YoutubeAdapter());        
         expect(mediaPlayer.connect()).toEqual('Connected to Youtube');
 
         const playlist = mediaPlayer.getPlaylist();

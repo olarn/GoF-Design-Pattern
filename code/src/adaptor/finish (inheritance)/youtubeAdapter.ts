@@ -1,7 +1,7 @@
 import { SpotifyAPI } from "./spotifyAPI";
 import { Youtube } from "./youtubeAPI";
 
-export class YoutubeAdaptor extends Youtube implements SpotifyAPI {
+export class YoutubeAdapter extends Youtube implements SpotifyAPI {
     connect(): string {
         return super.connect();
     }

@@ -1,7 +1,7 @@
 import { MediaProvider } from "./spotifyAPI";
 import { Youtube } from "./youtubeAPI";
 
-export class YoutubeAdaptor implements MediaProvider {
+export class YoutubeAdapter implements MediaProvider {
     private youtube = new Youtube();
 
     connect(): string {
