@@ -1,11 +1,11 @@
-import { Gashapon } from "../gashapon";
-import { GashaponCapsule } from "../gashaponCapsule";
-import { GashaponMachineState } from "../gashaponMachineState";
-import { HasCoinState } from "./hasCoinState";
-import { OutOfCapsuleState } from "./outOfCapsuleState";
-import { ReadyState } from "./readyState";
-import { ReadyToSpinState } from "./readyToSpinState";
-import { WinnerChanceToSpin } from "./winnerChanceToSpin";
+import { Gashapon } from "../../gashapon";
+import { GashaponCapsule } from "../../gashaponCapsule";
+import { GashaponMachineState } from "../../gashaponMachineState";
+import { HasCoinState } from "../hasCoinState";
+import { OutOfCapsuleState } from "../outOfCapsuleState";
+import { ReadyState } from "../readyState";
+import { ReadyToSpinState } from "../readyToSpinState";
+import { WinnerChanceToSpin } from "../winnerChanceToSpin";
 
 describe('Gashapon Winner Chance to Spin State', () => {
     var gashapon: Gashapon;

@@ -11,7 +11,8 @@ export class Gashapon {
     private requireCoins = 4;
     private coins = 0;
     private state: GashaponMachineState = GashaponMachineState.outOfCapsule;
-    states: GashaponDictionary = {
+
+    allStates: GashaponDictionary = {
         [GashaponMachineState.ready]: new ReadyState(this),
         [GashaponMachineState.hasCoin]: new HasCoinState(this),
         [GashaponMachineState.readyToSpin]: new ReadyToSpinState(this),
@@ -22,15 +23,15 @@ export class Gashapon {
     // === State methods
 
     insertCoin() {
-        this.states[this.state].insertCoin();
+        this.allStates[this.state].insertCoin();
     }
 
     ejectCoins(): number {
-        return this.states[this.state].ejectCoins();
+        return this.allStates[this.state].ejectCoins();
     }
 
     spin(): GashaponCapsule[] {
-        return this.states[this.state].spin();
+        return this.allStates[this.state].spin();
     }
 
     reload(capsules: GashaponCapsule[]) {
@@ -49,7 +50,7 @@ export class Gashapon {
         this.remainCapsule.slice(0);
         this.coins = 0;
         return capsule
-}
+    }
 
     // === Gashapon Machine (or Context) methods
 

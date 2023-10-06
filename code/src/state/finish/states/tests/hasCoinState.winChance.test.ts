@@ -1,6 +1,6 @@
-import { Gashapon } from "../gashapon";
-import { GashaponCapsule } from "../gashaponCapsule";
-import { HasCoinState } from "./hasCoinState";
+import { Gashapon } from "../../gashapon";
+import { GashaponCapsule } from "../../gashaponCapsule";
+import { HasCoinState } from "../hasCoinState";
 
 describe('Has coin State', () => {
     it('should get readToSpin state if not get a chance', () => {

@@ -1,11 +1,11 @@
-import { Gashapon } from "../gashapon";
-import { GashaponCapsule } from "../gashaponCapsule";
-import { GashaponMachineState } from "../gashaponMachineState";
-import { HasCoinState } from "./hasCoinState";
-import { OutOfCapsuleState } from "./outOfCapsuleState";
-import { ReadyState } from "./readyState";
-import { ReadyToSpinState } from "./readyToSpinState";
-import { WinnerChanceToSpin } from "./winnerChanceToSpin";
+import { Gashapon } from "../../gashapon";
+import { GashaponCapsule } from "../../gashaponCapsule";
+import { GashaponMachineState } from "../../gashaponMachineState";
+import { HasCoinState } from "../hasCoinState";
+import { OutOfCapsuleState } from "../outOfCapsuleState";
+import { ReadyState } from "../readyState";
+import { ReadyToSpinState } from "../readyToSpinState";
+import { WinnerChanceToSpin } from "../winnerChanceToSpin";
 
 describe('Gashapon + state Winner Chance to Spin ', () => {
     var gashapon: Gashapon;
@@ -22,7 +22,7 @@ describe('Gashapon + state Winner Chance to Spin ', () => {
     it('should lose 10% chance to get winner chance', () => {
         var hasCointState = new HasCoinState(gashapon);
         hasCointState.tenPercentChanceToGetWinnerSpin = jest.fn().mockReturnValue(false);
-        gashapon.states = {
+        gashapon.allStates = {
             [GashaponMachineState.ready]: new ReadyState(gashapon),
             [GashaponMachineState.hasCoin]: hasCointState,
             [GashaponMachineState.readyToSpin]: new ReadyToSpinState(gashapon),
@@ -44,7 +44,7 @@ describe('Gashapon + state Winner Chance to Spin ', () => {
         const mockWinnerChanceToSpin = new WinnerChanceToSpin(gashapon);
         mockWinnerChanceToSpin.winTheChance = jest.fn().mockReturnValue(true);
 
-        gashapon.states = {
+        gashapon.allStates = {
             [GashaponMachineState.ready]: new ReadyState(gashapon),
             [GashaponMachineState.hasCoin]: mockHasCointState,
             [GashaponMachineState.readyToSpin]: new ReadyToSpinState(gashapon),
@@ -73,7 +73,7 @@ describe('Gashapon + state Winner Chance to Spin ', () => {
         const mockHasCointState = new HasCoinState(gashapon);
         mockHasCointState.tenPercentChanceToGetWinnerSpin = jest.fn().mockReturnValue(true);
 
-        gashapon.states = {
+        gashapon.allStates = {
             [GashaponMachineState.ready]: new ReadyState(gashapon),
             [GashaponMachineState.hasCoin]: mockHasCointState,
             [GashaponMachineState.readyToSpin]: new ReadyToSpinState(gashapon),

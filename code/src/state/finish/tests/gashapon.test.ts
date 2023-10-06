@@ -1,5 +1,5 @@
-import { Gashapon } from "./gashapon";
-import { GashaponCapsule } from "./gashaponCapsule";
+import { Gashapon } from "../gashapon";
+import { GashaponCapsule } from "../gashaponCapsule";
 
 describe('Gashapon Machine', () => {
     const gashapon = new Gashapon();
