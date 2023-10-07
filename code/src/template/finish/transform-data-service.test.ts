@@ -10,7 +10,9 @@ describe('DataTransformService', function () {
 
     dataTransformService.process();
 
-    expect(FileReaderTemplate.prototype.read).toHaveBeenCalled()
-    expect(console.log).toHaveBeenCalledWith("Processing read file.... filename : file content of data.txt")
+    expect(dataTransformService.transformedData).toEqual({
+      column: ['username', 'number'],
+      data: []
+    })
   });
 });
