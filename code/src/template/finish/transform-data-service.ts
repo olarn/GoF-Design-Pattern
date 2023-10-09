@@ -3,29 +3,28 @@ import * as fs from "fs";
 import * as path from "path";
 
 class DataTransformService {
-  private rawCsvFile: string[][] = [[]];
-  public transformedData: { column: string[], data: [] } | null = null;
+  public transformedData:
+      {
+        username: string
+        job: string;
+        number: number;
+      }[] | null = null;
 
-  process() {
-    console.log("Processing data...");
-    this.readFile();
-    this.transformDataToObjects();
+  readFile(fileName: string) {
+    const file = fs.readFileSync(path.resolve(__dirname, fileName), 'utf8');
+    const rawFile = Papa.parse(file);
+    const resultArray = rawFile?.data as string [][];
+    return resultArray.filter((data: string[]) => data.length !== 1)
   }
 
-  readFile() {
-    const file = fs.readFileSync(path.resolve(__dirname, 'user_csv.csv'), 'utf8');
-    Papa.parse(file, {
-      complete: (results) => {
-        this.rawCsvFile = results.data as string[][]
+  transformDataToObjects(csvData: string[][]) {
+    this.transformedData = csvData.slice(1).map((data, index) => {
+      return {
+        username: data[0],
+        number: Number(data[1]),
+        job: data[2]
       }
-    });
-  }
-
-  transformDataToObjects() {
-    this.transformedData = {
-      column: this.rawCsvFile[0],
-      data: []
-    }
+    })
   }
 }
 
