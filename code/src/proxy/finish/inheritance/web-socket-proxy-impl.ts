@@ -1,11 +1,5 @@
 import WebSocket from "ws";
-
-interface IWebSocketProxy {
-  connect(): void;
-
-  send(data: string): void;
-}
-
+import { IWebSocketProxy } from '../IWebSocketProxy';
 
 export class WebSocketProxyImpl implements IWebSocketProxy {
   private readonly url: string;
