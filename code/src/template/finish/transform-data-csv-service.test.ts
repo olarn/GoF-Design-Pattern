@@ -1,11 +1,11 @@
-import DataTransformService from './transform-data-service';
+import DataTransformService from 'template/finish/transform-data-csv-service';
 
 describe('DataTransformService', function () {
   it('should set correct data format', function () {
     const dataTransformService = new DataTransformService();
 
     const result = dataTransformService.readFile("user_csv.csv");
-    dataTransformService.transformDataToObjects(result)
+    dataTransformService.transformDataToObject(result)
 
     expect(dataTransformService.transformedData).toEqual([
       {
@@ -25,7 +25,6 @@ describe('DataTransformService', function () {
     const dataTransformService = new DataTransformService();
 
     const result = dataTransformService.readFile("user_csv.csv");
-    console.log(result)
 
     expect(result).toEqual([
       ['username', 'number', 'job'],
