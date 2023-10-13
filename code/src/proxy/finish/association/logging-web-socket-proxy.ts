@@ -2,8 +2,9 @@ import { IWebSocketProxy } from '../IWebSocketProxy';
 import WebSocketProxyImpl from './web-socket-proxy-impl';
 
 class LoggingWebSocketProxyAssoc implements IWebSocketProxy {
-  private webSocketProxyImpl :IWebSocketProxy|null = null;
-  constructor(url:string) {
+  private webSocketProxyImpl: IWebSocketProxy | null = null;
+
+  constructor(url: string) {
     this.webSocketProxyImpl = new WebSocketProxyImpl(url);
     this.connect();
   }
