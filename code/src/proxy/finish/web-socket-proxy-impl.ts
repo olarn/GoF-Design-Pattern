@@ -1,5 +1,5 @@
 import WebSocket from "ws";
-import { IWebSocketProxy } from '../IWebSocketProxy';
+import { IWebSocketProxy } from 'proxy/finish/IWebSocketProxy';
 
 export class WebSocketProxyImpl implements IWebSocketProxy {
   private readonly url: string;
@@ -15,24 +15,23 @@ export class WebSocketProxyImpl implements IWebSocketProxy {
       this.socket = new WebSocket(this.url);
       this.initializeWebSocketCallBack();
     } catch (e) {
-      console.log(e)
+      throw e;
     }
 
   }
 
   send(data: string) {
-    if (this.socket) {
-      this.socket.send(data);
-    } else {
-      console.error("WebSocket is not connected.");
+    if (!this.socket) {
+      throw new Error("WebSocket is not connected.");
     }
+    this.socket.send(data);
   }
 
 
   initializeWebSocketCallBack() {
     if (this.socket) {
       this.socket.on('open', (code: number, reason: string) => {
-        console.log(`WebSocket closed with code ${code} and reason: ${reason}`);
+        console.log(`WebSocket open with code ${code} and reason: ${reason}`);
       });
 
       this.socket.on('message', (message: string) => {
