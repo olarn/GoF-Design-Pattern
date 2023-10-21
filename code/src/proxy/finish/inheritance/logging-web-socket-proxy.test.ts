@@ -11,7 +11,7 @@ describe('LoggingWebSocketProxy', function () {
     expect(WebSocket.prototype.send).toHaveBeenCalledWith("Hello");
   })
 
-  it('should have call websocket send with humanreadable date..', function () {
+  it('should have call websocket send with Monday, October 2, 2023 at 07:00:00 AM GMT+7', function () {
     const loggingWebSocketProxy = new LoggingWebSocketProxy("ws://example.com/socket");
     jest
         .useFakeTimers()
