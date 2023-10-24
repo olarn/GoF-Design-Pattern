@@ -1,5 +1,5 @@
 import { IWebSocketProxy } from '../IWebSocketProxy';
-import WebSocketProxyImpl from './web-socket-proxy-impl';
+import WebSocketProxyImpl from '../web-socket-proxy-impl';
 
 class LoggingWebSocketProxyAssoc implements IWebSocketProxy {
   private webSocketProxyImpl: IWebSocketProxy | null = null;
@@ -14,18 +14,29 @@ class LoggingWebSocketProxyAssoc implements IWebSocketProxy {
     console.log('WebSocket connected');
   }
 
-  timeNowInString() {
-    return `${new Date().toISOString()}`;
-  }
-
   send(data: string): void {
     if (data === "now") {
-      data = this.timeNowInString();
+      data = this.transformTimeToReadableFormat(new Date());
     }
-    console.log(`Sent: ${data}`);
     this.webSocketProxyImpl?.send(data);
   }
 
+  transformTimeToReadableFormat(date: Date) {
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      timeZoneName: 'short',
+    };
+
+    const formattedDate: string = new Intl.DateTimeFormat('en-US', options).format(date);
+
+    return formattedDate;
+  }
 
 }
 

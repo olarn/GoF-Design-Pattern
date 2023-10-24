@@ -1,4 +1,4 @@
-import { WebSocketProxyImpl } from './web-socket-proxy-impl';
+import WebSocketProxyImpl from '../web-socket-proxy-impl';
 
 class LoggingWebSocketProxy extends WebSocketProxyImpl {
   constructor(url: string) {
@@ -13,14 +13,29 @@ class LoggingWebSocketProxy extends WebSocketProxyImpl {
 
   sendLogging(data: string) {
     if (data === "now") {
-      data = this.timeNowInString();
+      const date = new Date();
+      const formattedDate: string = this.transformTimeToReadableFormat(date);
+      data = `${formattedDate}`;
     }
+
     super.send(data);
-    console.log(`Sent: ${data}`);
   }
 
-  timeNowInString() {
-    return `${new Date().toISOString()}`;
+  transformTimeToReadableFormat(date: Date) {
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      timeZoneName: 'short',
+    };
+
+    const formattedDate: string = new Intl.DateTimeFormat('en-US', options).format(date);
+
+    return formattedDate;
   }
 }
 
