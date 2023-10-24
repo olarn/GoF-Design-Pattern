@@ -1,5 +1,4 @@
 import xlsx from 'node-xlsx';
-import { ITransformData } from 'template/finish/ITransformData';
 import AbstractFileReader from '../abstract-file-reader';
 
 class TransformDataXlsxService extends AbstractFileReader {
