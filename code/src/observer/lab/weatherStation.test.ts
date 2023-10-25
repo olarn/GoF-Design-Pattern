@@ -1,20 +1,20 @@
+import { WeatherData } from "./weatherData";
 import { WeatherStation } from "./weatherStation";
 
 describe('Weather station measurement changed', () => {
     it('display should be called when measurement changed', () => {
         // given
         const weatherStation = new WeatherStation();
+        const data = new WeatherData(32.0, 0.8, 1.0);
 
         // when
-        weatherStation.temperature = 34.0;
-        weatherStation.humidity = 0.8;
-        weatherStation.pressure = 1.0;
+        weatherStation.update(data);
 
         // then
         expect(weatherStation.updateCurrentConditionsDisplay())
-            .toBe('Current conditions: 34F degrees and 0.8% humidity');
+            .toBe('Current conditions: 32C degrees and 0.8% humidity');
         expect(weatherStation.updateStatisticsDisplay())
-            .toBe('Avg/Max/Min temperature = 34/0.8/1');
+            .toBe('Avg/Max/Min temperature = 32/0.8/1');
         expect(weatherStation.updateForecastDisplay())
             .toBe('Forecast: More of the same');
     });

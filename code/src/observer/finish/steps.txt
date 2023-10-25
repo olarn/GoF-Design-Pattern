@@ -1,6 +1,0 @@
-Observer efactoring Steps
-
-1. Refactor -> wrap temperature, humidity, pressure in to a WeatherData class.
-2. Add WeatherObserver interface class.
-3. Add WeatherObserver interface implementation classes (weatherForcast, currentWeatherConditions, weatherStatisstic).
-4. Refactor WeatherStation to use observer objects. 

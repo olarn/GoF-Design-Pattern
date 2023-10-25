@@ -1,24 +1,31 @@
-import { WeatherObserver } from "./observers/weatherObserver";
 import { WeatherData } from "./weatherData";
+import { WeatherForecast } from "./weatherObserver";
 
 export class WeatherStation {
-    weatherObservers: WeatherObserver[] = [];
-    add(observer: WeatherObserver) {
-        this.weatherObservers.push(observer);
+    private data = new WeatherData(0, 0, 0);
+
+    public update(data: WeatherData): void {
+        this.data = data;
+        for (let observer of this.observers) {
+            observer.update(data);
+        }
     }
 
-    private _weatherData: WeatherData = {} as WeatherData;
-    public get weatherData(): WeatherData {
-        return this._weatherData;
+    private observers: WeatherForecast[] = [];
+
+    public registerObserver(weatherForecast: WeatherForecast) {
+        this.observers.push(weatherForecast);
     }
-    public set weatherData(value: WeatherData) {
-        this._weatherData = value;
-        this.update();
+    
+    updateCurrentConditionsDisplay(): string {
+        return `Current conditions: ${this.data.temperature}C degrees and ${this.data.humidity}% humidity`;
     }
 
-    update() {
-        this.weatherObservers.forEach(observer => {
-            observer.update(this._weatherData);
-        });
+    updateStatisticsDisplay(): string {
+        return `Avg/Max/Min temperature = ${this.data.temperature}/${this.data.humidity}/${this.data.pressure}`;
+    }
+
+    updateForecastDisplay(): string {
+        return `Forecast: More of the same`;
     }
 }
