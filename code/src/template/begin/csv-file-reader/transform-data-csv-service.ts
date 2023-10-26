@@ -1,7 +1,7 @@
 import * as Papa from 'papaparse';
 import * as fs from 'fs';
 import * as path from 'path';
-import { Employee, SheetRawData } from 'template/finish/ITransformData';
+import { Employee, SheetRawData } from '../../finish/ITransformData';
 
 class DataTransformCSVService {
   readFile(fileName: string): SheetRawData[] {
@@ -10,7 +10,7 @@ class DataTransformCSVService {
     const rawFile = Papa.parse(file);
     fileMapped.push({
       name: '',
-      data: rawFile?.data as string[][] | number[][],
+      data: rawFile?.data as string[][] | number[][]
     });
     return fileMapped;
   }
@@ -24,15 +24,12 @@ class DataTransformCSVService {
       return {
         username: String(data[0]),
         number: Number(data[1]),
-        job: String(data[2]),
+        job: String(data[2])
       };
     });
-  }
+  };
 
-  public getEmployeeDataFromFile(
-    dataFileName: string,
-    sheetIndex: number,
-  ): Employee[] {
+  public getEmployeeDataFromFile(dataFileName: string, sheetIndex: number): Employee[] {
     const rawFileData = this.readFile(dataFileName);
     const cleanData = this.cleanData(rawFileData[sheetIndex]?.data);
     return this.transformDataToObject(cleanData);
