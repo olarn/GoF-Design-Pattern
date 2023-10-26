@@ -11,7 +11,7 @@ export class MediaPlayer {
     if (!this.provider) {
       return "";
     }
-    return "Connected to " + this.provider!.connect();
+    return `Connected to ${this.provider!.connect()}`;
   }
 
   getPlaylist(): string[] {
