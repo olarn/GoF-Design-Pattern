@@ -1,4 +1,5 @@
-import { Billing, PackageType } from "./billing";
+import { Billing } from "./billing";
+import { PackageType } from "./packages/packageType";
 
 describe("Generate monthly billing based-on total hours and package type", () => {
   it("should always return package price for fixed package", () => {

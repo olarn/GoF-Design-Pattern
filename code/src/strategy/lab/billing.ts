@@ -1,8 +1,4 @@
-export enum PackageType {
-  FIXED = "FIXED",
-  HOUR_FLEX = "HOUR_FLEX",
-  STEPPING = "STEPPING",
-}
+import { PackageType } from "./packages/packageType";
 
 export class Billing {
   private vatRate = 7.0;

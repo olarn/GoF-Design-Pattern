@@ -1,6 +1,6 @@
-import { IPackage } from "./IPackage";
+import { BillingPackage } from "./billingPackage";
 
-export class EmptyPackage implements IPackage {
+export class EmptyPackage implements BillingPackage {
   public monthlyBill(totalHours: number): number {
     return 0;
   }
