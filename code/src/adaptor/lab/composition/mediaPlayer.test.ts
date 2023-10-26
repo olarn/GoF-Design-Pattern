@@ -18,4 +18,9 @@ describe('Media Player', () => {
         expect(mediaPlayer.play(playlist[1])).toEqual('Playing spotify.song2');
         expect(mediaPlayer.play(playlist[2])).toEqual('Playing spotify.song3');
     });
+
+    it('should be able to play musics from Youtube playlist, with Adaptor pattern.', () => {
+        //TODO
+
+    });
 });
