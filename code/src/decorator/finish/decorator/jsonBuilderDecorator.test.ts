@@ -1,25 +1,25 @@
-import { JSONBuilder } from "../jsonBuilder";
-import { WrappedJsonBuilder } from "./wrappedJsonBuilder";
-import { EncryptableJsonBuilder } from "./encryptableJsonBuilder";
+import { JSONBuilder } from '../jsonBuilder';
+import { WrappedJsonBuilder } from './wrappedJsonBuilder';
+import { EncryptableJsonBuilder } from './encryptableJsonBuilder';
 
-describe("jsonBuilder decorator", () => {
-  it("should return encrypted JSON string", () => {
+describe('jsonBuilder decorator', () => {
+  it('should return encrypted JSON string', () => {
     // given
     const jsonBuilder = new JSONBuilder();
     const encryptableJsonBuilder = new EncryptableJsonBuilder(jsonBuilder);
     const givenData = {
-      name: "John",
-      surname: "Doe",
+      name: 'John',
+      surname: 'Doe',
       age: 30,
     };
     const expectedData = {
-      name: "encrypted(John)",
-      surname: "encrypted(Doe)",
+      name: 'encrypted(John)',
+      surname: 'encrypted(Doe)',
       age: 30,
     };
 
     // when
-    encryptableJsonBuilder.toEncrypt = ["name", "surname"];
+    encryptableJsonBuilder.toEncrypt = ['name', 'surname'];
 
     // then
     expect(encryptableJsonBuilder.build(givenData)).toEqual(
@@ -27,7 +27,7 @@ describe("jsonBuilder decorator", () => {
     );
   });
 
-  it("should return encrypted JSON string with wrapped structure", () => {
+  it('should return encrypted JSON string with wrapped structure', () => {
     // given
     const jsonBuilder = new JSONBuilder();
     const wrappedJsonBuilder = new WrappedJsonBuilder(jsonBuilder);
@@ -36,22 +36,22 @@ describe("jsonBuilder decorator", () => {
     );
 
     const givenData = {
-      name: "John",
-      surname: "Doe",
+      name: 'John',
+      surname: 'Doe',
       age: 30,
     };
     const expectedWrappedData = {
-      statusCode: "000",
-      statusDescrription: "OK",
+      statusCode: '000',
+      statusDescrription: 'OK',
       data: {
-        name: "encrypted(John)",
-        surname: "encrypted(Doe)",
+        name: 'encrypted(John)',
+        surname: 'encrypted(Doe)',
         age: 30,
       },
     };
 
     // when
-    encryptableJsonBuilder.toEncrypt = ["name", "surname"];
+    encryptableJsonBuilder.toEncrypt = ['name', 'surname'];
 
     // then
     expect(encryptableJsonBuilder.build(givenData)).toEqual(

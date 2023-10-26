@@ -6,7 +6,7 @@ import {
   PizzaSize,
   PizzaStyle,
   PizzaType,
-} from "./pizza";
+} from './pizza';
 
 export class PizzaStore {
   orderPizza(style: PizzaStyle, type: PizzaType, size: PizzaSize) {

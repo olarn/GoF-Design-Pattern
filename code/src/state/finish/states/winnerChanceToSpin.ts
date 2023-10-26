@@ -1,7 +1,7 @@
-import { Gashapon } from "../gashapon";
-import { GashaponCapsule } from "../gashaponCapsule";
-import { GashaponMachineState } from "../gashaponMachineState";
-import { GashaponState } from "./gashaponState";
+import { Gashapon } from '../gashapon';
+import { GashaponCapsule } from '../gashaponCapsule';
+import { GashaponMachineState } from '../gashaponMachineState';
+import { GashaponState } from './gashaponState';
 
 export class WinnerChanceToSpin implements GashaponState {
   constructor(private gashapon: Gashapon) {}
@@ -11,7 +11,7 @@ export class WinnerChanceToSpin implements GashaponState {
   }
 
   insertCoin(): void {
-    throw new Error("Cannot insert coin when ready to spin");
+    throw new Error('Cannot insert coin when ready to spin');
   }
 
   ejectCoins(): number {

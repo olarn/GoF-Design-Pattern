@@ -1,4 +1,4 @@
-import WebSocket from "ws";
+import WebSocket from 'ws';
 
 class LoggingWebSocket {
   private readonly url: string;
@@ -19,22 +19,22 @@ class LoggingWebSocket {
 
   send(data: string) {
     if (this.socket) {
-      if (data === "now") {
+      if (data === 'now') {
         const date = new Date();
 
         const options: Intl.DateTimeFormatOptions = {
-          weekday: "long",
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-          timeZoneName: "short",
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          timeZoneName: 'short',
         };
 
         const formattedDate: string = new Intl.DateTimeFormat(
-          "en-US",
+          'en-US',
           options,
         ).format(date);
 
@@ -42,7 +42,7 @@ class LoggingWebSocket {
       }
       this.socket.send(data);
     } else {
-      console.error("WebSocket is not connected.");
+      console.error('WebSocket is not connected.');
     }
   }
 }

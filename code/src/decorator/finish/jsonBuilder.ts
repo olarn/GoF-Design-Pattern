@@ -1,4 +1,4 @@
-import { JSONBuilderDecorator } from "./decorator/jsonBuilderDecorator";
+import { JSONBuilderDecorator } from './decorator/jsonBuilderDecorator';
 
 export class JSONBuilder implements JSONBuilderDecorator {
   withResponseWrapper = false;
@@ -15,8 +15,8 @@ export class JSONBuilder implements JSONBuilderDecorator {
 
     if (this.withResponseWrapper) {
       return JSON.stringify({
-        statusCode: "000",
-        statusDescrription: "OK",
+        statusCode: '000',
+        statusDescrription: 'OK',
         data: result,
       });
     }

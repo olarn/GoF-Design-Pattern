@@ -1,17 +1,17 @@
-import { Gashapon } from "./gashapon";
-import { GashaponCapsule } from "./gashaponCapsule";
-import { GashaponMachineState } from "./gashaponMachineState";
+import { Gashapon } from './gashapon';
+import { GashaponCapsule } from './gashaponCapsule';
+import { GashaponMachineState } from './gashaponMachineState';
 
-describe("Eject coins", () => {
+describe('Eject coins', () => {
   var gashapon = new Gashapon();
 
   beforeEach(() => {
     gashapon = new Gashapon();
   });
 
-  it("should be able to eject coins when status is `readyToSpin`", () => {
+  it('should be able to eject coins when status is `readyToSpin`', () => {
     // given
-    gashapon.reload([new GashaponCapsule("Luffy")]);
+    gashapon.reload([new GashaponCapsule('Luffy')]);
 
     // when
     gashapon.insertCoin();
@@ -23,9 +23,9 @@ describe("Eject coins", () => {
     expect(gashapon.getState()).toBe(GashaponMachineState.ready);
   });
 
-  it("should throw error if eject coins when state is `ready`", () => {
+  it('should throw error if eject coins when state is `ready`', () => {
     // given
-    gashapon.reload([new GashaponCapsule("Luffy")]);
+    gashapon.reload([new GashaponCapsule('Luffy')]);
 
     // when -> then
     expect(() => gashapon.ejectCoins()).toThrowError(
@@ -33,7 +33,7 @@ describe("Eject coins", () => {
     );
   });
 
-  it("should throw error if eject coins when state is `outOfCapsule`", () => {
+  it('should throw error if eject coins when state is `outOfCapsule`', () => {
     expect(() => gashapon.ejectCoins()).toThrowError(
       "You haven't insert any coin",
     );

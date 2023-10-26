@@ -1,4 +1,4 @@
-import { Observer } from "./observers/observer";
+import { Observer } from './observers/observer';
 
 export class NotificationCenter {
   private observers: Observer[] = [];

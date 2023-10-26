@@ -1,4 +1,4 @@
-import { JSONBuilderDecorator } from "./jsonBuilderDecorator";
+import { JSONBuilderDecorator } from './jsonBuilderDecorator';
 
 export class EncryptableJsonBuilder implements JSONBuilderDecorator {
   constructor(private jsonBuilder: JSONBuilderDecorator) {}

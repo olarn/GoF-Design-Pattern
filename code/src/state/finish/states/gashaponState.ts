@@ -1,4 +1,4 @@
-import { GashaponCapsule } from "../gashaponCapsule";
+import { GashaponCapsule } from '../gashaponCapsule';
 
 export interface GashaponState {
   insertCoin(): void;

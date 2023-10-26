@@ -21,7 +21,7 @@ export class Task {
 
   review(reviewer: string) {
     if (this.state !== TaskStatus.Opened) {
-      throw new Error("Task is not in Opened state");
+      throw new Error('Task is not in Opened state');
     }
     this.reviewBy = reviewer;
     this.state = TaskStatus.RequestToApprove;
@@ -29,7 +29,7 @@ export class Task {
 
   reject(manager: string, reason: string) {
     if (this.state !== TaskStatus.RequestToApprove) {
-      throw new Error("Task is not in RequestToApprove state");
+      throw new Error('Task is not in RequestToApprove state');
     }
 
     this.rejectBy = manager;
@@ -39,7 +39,7 @@ export class Task {
 
   approve(manager: string) {
     if (this.state !== TaskStatus.RequestToApprove) {
-      throw new Error("Task is not in RequestToApprove state");
+      throw new Error('Task is not in RequestToApprove state');
     }
     this.approvedBy = manager;
     this.state = TaskStatus.Approved;
@@ -47,7 +47,7 @@ export class Task {
 
   performTask(staff: string) {
     if (this.state !== TaskStatus.Approved) {
-      throw new Error("Task is not in Approved state");
+      throw new Error('Task is not in Approved state');
     }
     this.performTaskBy = staff;
     this.state = TaskStatus.InProgress;
@@ -67,7 +67,7 @@ export class Task {
 
   finish() {
     if (this.state !== TaskStatus.InProgress) {
-      throw new Error("Task is not in InProgress state");
+      throw new Error('Task is not in InProgress state');
     }
     this.state = TaskStatus.Finished;
   }

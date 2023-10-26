@@ -1,5 +1,5 @@
-import { MediaProvider } from "./spotifyAPI";
-import { Youtube } from "./youtubeAPI";
+import { MediaProvider } from './spotifyAPI';
+import { Youtube } from './youtubeAPI';
 
 export class YoutubeAdapter implements MediaProvider {
   private youtube = new Youtube();

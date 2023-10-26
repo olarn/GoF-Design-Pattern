@@ -13,8 +13,8 @@ export class JSONBuilder {
 
     if (this.withResponseWrapper) {
       return JSON.stringify({
-        statusCode: "000",
-        statusDescrription: "OK",
+        statusCode: '000',
+        statusDescrription: 'OK',
         data: result,
       });
     }

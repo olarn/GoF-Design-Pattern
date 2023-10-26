@@ -10,7 +10,7 @@ export class TeaMachine {
     this.pourInCup();
     this.addSugar();
 
-    return "Here is your tea!";
+    return 'Here is your tea!';
   }
 
   private brewTeaGrinds() {

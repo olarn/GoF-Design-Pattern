@@ -1,4 +1,4 @@
-import { PackageType } from "./packages/packageType";
+import { PackageType } from './packages/packageType';
 
 export class Billing {
   private vatRate = 7.0;

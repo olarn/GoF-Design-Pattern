@@ -1,7 +1,7 @@
-import { Gashapon } from "../gashapon";
-import { GashaponCapsule } from "../gashaponCapsule";
-import { GashaponMachineState } from "../gashaponMachineState";
-import { GashaponState } from "./gashaponState";
+import { Gashapon } from '../gashapon';
+import { GashaponCapsule } from '../gashaponCapsule';
+import { GashaponMachineState } from '../gashaponMachineState';
+import { GashaponState } from './gashaponState';
 
 export class ReadyState implements GashaponState {
   constructor(private gashapon: Gashapon) {}
@@ -18,6 +18,6 @@ export class ReadyState implements GashaponState {
     throw new Error("You haven't insert any coin");
   }
   spin(): GashaponCapsule[] {
-    throw new Error("Please insert more coin");
+    throw new Error('Please insert more coin');
   }
 }

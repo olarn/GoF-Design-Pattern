@@ -1,7 +1,7 @@
-import { Gashapon } from "../gashapon";
-import { GashaponCapsule } from "../gashaponCapsule";
-import { GashaponMachineState } from "../gashaponMachineState";
-import { GashaponState } from "./gashaponState";
+import { Gashapon } from '../gashapon';
+import { GashaponCapsule } from '../gashaponCapsule';
+import { GashaponMachineState } from '../gashaponMachineState';
+import { GashaponState } from './gashaponState';
 
 export class HasCoinState implements GashaponState {
   constructor(private gashapon: Gashapon) {}
@@ -25,7 +25,7 @@ export class HasCoinState implements GashaponState {
   }
 
   spin(): GashaponCapsule[] {
-    throw new Error("Please insert more coin");
+    throw new Error('Please insert more coin');
   }
 
   public tenPercentChanceToGetWinnerSpin(): boolean {

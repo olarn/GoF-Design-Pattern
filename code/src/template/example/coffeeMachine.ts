@@ -10,7 +10,7 @@ export class CoffeeMachine {
     this.pourInCup();
     this.addSugarAndMilk();
 
-    return "Here is your coffee!";
+    return 'Here is your coffee!';
   }
 
   private brewCoffeeGrinds() {

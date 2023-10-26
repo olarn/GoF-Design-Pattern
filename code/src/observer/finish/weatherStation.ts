@@ -1,6 +1,6 @@
-import { WeatherObserver } from "observer/lab/weatherObserver";
-import { WeatherData } from "./weatherData";
-import { WeatherForecast } from "./weatherObserver";
+import { WeatherObserver } from 'observer/lab/weatherObserver';
+import { WeatherData } from './weatherData';
+import { WeatherForecast } from './weatherObserver';
 
 export class WeatherStation {
   private data = new WeatherData(0, 0, 0);

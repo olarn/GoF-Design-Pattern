@@ -1,4 +1,4 @@
-import { Address, Customer } from "./customer";
+import { Address, Customer } from './customer';
 
 export class CustomerBuilder {
   customer: Customer;
@@ -7,8 +7,8 @@ export class CustomerBuilder {
   }
 
   setName(name: string) {
-    this.customer.firstName = name.split(" ")[0];
-    this.customer.lastName = name.split(" ")[1];
+    this.customer.firstName = name.split(' ')[0];
+    this.customer.lastName = name.split(' ')[1];
     return this;
   }
 

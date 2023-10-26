@@ -1,12 +1,12 @@
-import { Employee, Manager } from "./manager";
+import { Employee, Manager } from './manager';
 
-describe("Manager Role", () => {
-  it("should be able to do anything as employee do, inheritance way", () => {
+describe('Manager Role', () => {
+  it('should be able to do anything as employee do, inheritance way', () => {
     var employee = new Employee();
-    expect(doWorkBy(employee)).toEqual("Employee is working");
+    expect(doWorkBy(employee)).toEqual('Employee is working');
 
     employee = new Manager();
-    expect(doWorkBy(employee)).toEqual("Employee is working under Manager.");
+    expect(doWorkBy(employee)).toEqual('Employee is working under Manager.');
   });
 });
 

@@ -1,10 +1,10 @@
-import { NotificationCenter } from "./notificationCenter";
-import { DiscordObserver } from "./observers/discordObserver";
-import { SlackObserver } from "./observers/slackObserver";
-import { TelegramObserver } from "./observers/telegramObserver";
+import { NotificationCenter } from './notificationCenter';
+import { DiscordObserver } from './observers/discordObserver';
+import { SlackObserver } from './observers/slackObserver';
+import { TelegramObserver } from './observers/telegramObserver';
 
-describe("NotificationCenter", () => {
-  it("should notify on Slack and Discord (only 2), not telegram.", () => {
+describe('NotificationCenter', () => {
+  it('should notify on Slack and Discord (only 2), not telegram.', () => {
     // // given notification 1
     // const notificationCenter1 = new NotificationCenter();
     // notificationCenter1.reset();

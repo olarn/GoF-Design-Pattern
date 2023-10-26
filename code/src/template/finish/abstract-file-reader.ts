@@ -1,4 +1,4 @@
-import { Employee, SheetRawData } from "template/finish/ITransformData";
+import { Employee, SheetRawData } from 'template/finish/ITransformData';
 
 abstract class AbstractFileReader {
   protected abstract readFile(fileName: string): SheetRawData[];

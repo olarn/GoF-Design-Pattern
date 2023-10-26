@@ -1,4 +1,4 @@
-import { BillingPackage } from "./billingPackage";
+import { BillingPackage } from './billingPackage';
 
 export class HourFlexPackage implements BillingPackage {
   public monthlyBill(totalHours: number): number {

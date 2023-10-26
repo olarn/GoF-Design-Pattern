@@ -1,5 +1,5 @@
-import xlsx from "node-xlsx";
-import AbstractFileReader from "../abstract-file-reader";
+import xlsx from 'node-xlsx';
+import AbstractFileReader from '../abstract-file-reader';
 
 class TransformDataXlsxService extends AbstractFileReader {
   readFile(fileName: string) {

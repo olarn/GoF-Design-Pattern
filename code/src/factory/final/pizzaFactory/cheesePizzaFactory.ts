@@ -6,8 +6,8 @@ import {
   PizzaSize,
   PizzaStyle,
   PizzaType,
-} from "../pizza";
-import { PizzaFactory } from "./pizzaFactory";
+} from '../pizza';
+import { PizzaFactory } from './pizzaFactory';
 
 export class CheesePizzaFactory implements PizzaFactory {
   bakePizza(style: PizzaStyle, size: PizzaSize): Pizza {

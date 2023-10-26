@@ -1,7 +1,7 @@
 export class SmartBulb {
-  private name: string = "";
-  private status: string = "off";
-  private color: string = "white";
+  private name: string = '';
+  private status: string = 'off';
+  private color: string = 'white';
   private brightness: number = 0;
 
   constructor(name: string) {
@@ -9,11 +9,11 @@ export class SmartBulb {
   }
 
   turnOn() {
-    this.status = "on";
+    this.status = 'on';
   }
 
   turnOff() {
-    this.status = "off";
+    this.status = 'off';
   }
 
   setColor(color: string) {
@@ -25,7 +25,7 @@ export class SmartBulb {
   }
 
   currentStatus(): string {
-    if (this.status === "off") {
+    if (this.status === 'off') {
       return `Bulb: ${this.name} is ${this.status}`;
     }
     return `Bulb: ${this.name} is ${this.status}, color: ${this.color}, brightness: ${this.brightness}`;

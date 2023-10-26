@@ -1,4 +1,4 @@
-import { WeatherData } from "./weatherData";
+import { WeatherData } from './weatherData';
 
 export class WeatherStation {
   private data = new WeatherData(0, 0, 0);

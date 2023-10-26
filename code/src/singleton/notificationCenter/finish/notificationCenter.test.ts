@@ -1,10 +1,10 @@
-import { NotificationCenter } from "./notificationCenter";
-import { DiscordObserver } from "./observers/discordObserver";
-import { SlackObserver } from "./observers/slackObserver";
-import { TelegramObserver } from "./observers/telegramObserver";
+import { NotificationCenter } from './notificationCenter';
+import { DiscordObserver } from './observers/discordObserver';
+import { SlackObserver } from './observers/slackObserver';
+import { TelegramObserver } from './observers/telegramObserver';
 
-describe("NotificationCenter", () => {
-  it("should notify on Slack and Discord (only 2), not telegram.", () => {
+describe('NotificationCenter', () => {
+  it('should notify on Slack and Discord (only 2), not telegram.', () => {
     // given
     const notificationCenter = NotificationCenter.getInstance();
     notificationCenter.reset();
@@ -13,16 +13,16 @@ describe("NotificationCenter", () => {
     const discord = new DiscordObserver();
     const telegram = new TelegramObserver();
 
-    const spyOnSlack = jest.spyOn(slack, "notify");
-    const spyOnDiscord = jest.spyOn(discord, "notify");
-    const spyOnTelegram = jest.spyOn(telegram, "notify");
+    const spyOnSlack = jest.spyOn(slack, 'notify');
+    const spyOnDiscord = jest.spyOn(discord, 'notify');
+    const spyOnTelegram = jest.spyOn(telegram, 'notify');
 
     notificationCenter.addObserver(slack);
     notificationCenter.addObserver(discord);
     notificationCenter.addObserver(telegram);
 
     // when
-    const notiMessage = "Build failed!!!";
+    const notiMessage = 'Build failed!!!';
     notificationCenter.postNotification(notiMessage);
 
     // then

@@ -1,4 +1,4 @@
-import { BillingPackage } from "./billingPackage";
+import { BillingPackage } from './billingPackage';
 
 export class SteppingPackage implements BillingPackage {
   public monthlyBill(totalHours: number): number {

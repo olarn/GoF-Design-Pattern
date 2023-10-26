@@ -1,25 +1,25 @@
-import { Gashapon } from "../../gashapon";
-import { GashaponCapsule } from "../../gashaponCapsule";
-import { GashaponMachineState } from "../../gashaponMachineState";
-import { HasCoinState } from "../hasCoinState";
-import { OutOfCapsuleState } from "../outOfCapsuleState";
-import { ReadyState } from "../readyState";
-import { ReadyToSpinState } from "../readyToSpinState";
-import { WinnerChanceToSpin } from "../winnerChanceToSpin";
+import { Gashapon } from '../../gashapon';
+import { GashaponCapsule } from '../../gashaponCapsule';
+import { GashaponMachineState } from '../../gashaponMachineState';
+import { HasCoinState } from '../hasCoinState';
+import { OutOfCapsuleState } from '../outOfCapsuleState';
+import { ReadyState } from '../readyState';
+import { ReadyToSpinState } from '../readyToSpinState';
+import { WinnerChanceToSpin } from '../winnerChanceToSpin';
 
-describe("Gashapon + state Winner Chance to Spin ", () => {
+describe('Gashapon + state Winner Chance to Spin ', () => {
   var gashapon: Gashapon;
 
   beforeEach(() => {
     gashapon = new Gashapon();
     gashapon.reload([
-      new GashaponCapsule("Luffy"),
-      new GashaponCapsule("Jinbei"),
-      new GashaponCapsule("Zoro"),
+      new GashaponCapsule('Luffy'),
+      new GashaponCapsule('Jinbei'),
+      new GashaponCapsule('Zoro'),
     ]);
   });
 
-  it("should lose 10% chance to get winner chance", () => {
+  it('should lose 10% chance to get winner chance', () => {
     var hasCointState = new HasCoinState(gashapon);
     hasCointState.tenPercentChanceToGetWinnerSpin = jest
       .fn()
@@ -39,7 +39,7 @@ describe("Gashapon + state Winner Chance to Spin ", () => {
     expect(gashapon.getState()).toBe(GashaponMachineState.readyToSpin);
   });
 
-  it("should win 10% chance to get winner chance", () => {
+  it('should win 10% chance to get winner chance', () => {
     const mockHasCointState = new HasCoinState(gashapon);
     mockHasCointState.tenPercentChanceToGetWinnerSpin = jest
       .fn()
@@ -68,14 +68,14 @@ describe("Gashapon + state Winner Chance to Spin ", () => {
 
     expect(gashapon.getState()).toBe(GashaponMachineState.winnerChanceToSpin);
     expect(() => gashapon.insertCoin()).toThrowError(
-      "Cannot insert coin when ready to spin",
+      'Cannot insert coin when ready to spin',
     );
 
     const capsules = gashapon.spin();
     expect(capsules.length).toBe(2);
   });
 
-  it("should random 10% chance to get winner chance, 50% to win", () => {
+  it('should random 10% chance to get winner chance, 50% to win', () => {
     const mockHasCointState = new HasCoinState(gashapon);
     mockHasCointState.tenPercentChanceToGetWinnerSpin = jest
       .fn()

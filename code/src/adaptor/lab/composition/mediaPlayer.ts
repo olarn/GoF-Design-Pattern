@@ -1,4 +1,4 @@
-import { MediaProvider, SpotifyAPI } from "./spotifyAPI";
+import { MediaProvider, SpotifyAPI } from './spotifyAPI';
 
 export class MediaPlayer {
   private provider?: MediaProvider;
@@ -9,9 +9,9 @@ export class MediaPlayer {
 
   connect(): string {
     if (!this.provider) {
-      return "";
+      return '';
     }
-    return "Connected to " + this.provider!.connect();
+    return 'Connected to ' + this.provider!.connect();
   }
 
   getPlaylist(): string[] {
@@ -22,6 +22,6 @@ export class MediaPlayer {
   }
 
   play(song: string): string {
-    return "Playing " + song;
+    return 'Playing ' + song;
   }
 }

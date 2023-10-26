@@ -5,10 +5,10 @@ export interface MediaProvider {
 
 export class SpotifyAPI implements MediaProvider {
   connect() {
-    return "Spotify";
+    return 'Spotify';
   }
 
   getPlaylist(): string[] {
-    return ["spotify.song1", "spotify.song2", "spotify.song3"];
+    return ['spotify.song1', 'spotify.song2', 'spotify.song3'];
   }
 }

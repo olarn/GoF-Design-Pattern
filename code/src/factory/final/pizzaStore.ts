@@ -1,7 +1,7 @@
-import { PizzaOrder, PizzaSize, PizzaStyle, PizzaType } from "./pizza";
-import { CheesePizzaFactory } from "./pizzaFactory/cheesePizzaFactory";
-import { ClassicPizzaFactory } from "./pizzaFactory/classicPizzaFactory";
-import { SeafoodPizzaFactory } from "./pizzaFactory/seafoodPizzaFactory";
+import { PizzaOrder, PizzaSize, PizzaStyle, PizzaType } from './pizza';
+import { CheesePizzaFactory } from './pizzaFactory/cheesePizzaFactory';
+import { ClassicPizzaFactory } from './pizzaFactory/classicPizzaFactory';
+import { SeafoodPizzaFactory } from './pizzaFactory/seafoodPizzaFactory';
 
 export class PizzaStore {
   orderPizza(order: PizzaOrder) {

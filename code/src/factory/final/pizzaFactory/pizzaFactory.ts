@@ -6,7 +6,7 @@ import {
   PizzaSize,
   PizzaStyle,
   PizzaType,
-} from "../pizza";
+} from '../pizza';
 
 export interface PizzaFactory {
   bakePizza(style: PizzaStyle, size: PizzaSize): Pizza;

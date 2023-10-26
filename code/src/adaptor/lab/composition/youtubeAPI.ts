@@ -1,5 +1,5 @@
 export class YoutubeMusic {
-  name: string = "";
+  name: string = '';
 }
 
 export interface YoutubeAPI {
@@ -9,14 +9,14 @@ export interface YoutubeAPI {
 
 export class Youtube implements YoutubeAPI {
   connect() {
-    return "Youtube";
+    return 'Youtube';
   }
 
   getMusicLibrary(): YoutubeMusic[] {
     return [
-      { name: "youtube.song1" },
-      { name: "youtube.song2" },
-      { name: "youtube.song3" },
+      { name: 'youtube.song1' },
+      { name: 'youtube.song2' },
+      { name: 'youtube.song3' },
     ];
   }
 }

@@ -1,15 +1,15 @@
-import * as Papa from "papaparse";
-import * as fs from "fs";
-import * as path from "path";
-import { Employee, SheetRawData } from "template/finish/ITransformData";
+import * as Papa from 'papaparse';
+import * as fs from 'fs';
+import * as path from 'path';
+import { Employee, SheetRawData } from 'template/finish/ITransformData';
 
 class DataTransformCSVService {
   readFile(fileName: string): SheetRawData[] {
-    const file = fs.readFileSync(path.resolve(__dirname, fileName), "utf8");
+    const file = fs.readFileSync(path.resolve(__dirname, fileName), 'utf8');
     const fileMapped = [];
     const rawFile = Papa.parse(file);
     fileMapped.push({
-      name: "",
+      name: '',
       data: rawFile?.data as string[][] | number[][],
     });
     return fileMapped;

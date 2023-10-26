@@ -1,4 +1,4 @@
-import { Command } from "./command/command";
+import { Command } from './command/command';
 
 export class Controller {
   slot?: Command;

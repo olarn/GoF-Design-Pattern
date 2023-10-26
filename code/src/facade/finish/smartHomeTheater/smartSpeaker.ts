@@ -1,6 +1,6 @@
 export class SmartSpeaker {
-  private name: string = "";
-  private status: string = "off";
+  private name: string = '';
+  private status: string = 'off';
   private volume: number = 0;
   private base: number = 0;
   private triple: number = 0;
@@ -10,11 +10,11 @@ export class SmartSpeaker {
   }
 
   turnOn() {
-    this.status = "on";
+    this.status = 'on';
   }
 
   turnOff() {
-    this.status = "off";
+    this.status = 'off';
   }
 
   setVolume(volume: number) {
@@ -30,7 +30,7 @@ export class SmartSpeaker {
   }
 
   currentStatus(): string {
-    if (this.status === "off") {
+    if (this.status === 'off') {
       return `Speaker: ${this.name} is ${this.status}`;
     }
     return `Speaker: ${this.name} is ${this.status}, volume: ${this.volume}, base: ${this.base}, triple: ${this.triple}`;

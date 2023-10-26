@@ -8,5 +8,5 @@ export class Singleton {
     return Singleton.instance;
   }
 
-  public secretKey = "";
+  public secretKey = '';
 }

@@ -1,7 +1,7 @@
-import { ResourcePool } from "./resourcePool";
+import { ResourcePool } from './resourcePool';
 
-describe("ResourcePool", () => {
-  it("should provide only 3 objects and no more", () => {
+describe('ResourcePool', () => {
+  it('should provide only 3 objects and no more', () => {
     // given
     const resourcePool = ResourcePool.getInstance();
     const resource1 = resourcePool.acquire();

@@ -1,6 +1,6 @@
 export class Employee {
   work() {
-    return "Employee is working";
+    return 'Employee is working';
   }
 }
 
@@ -12,6 +12,6 @@ export class Manager {
   }
 
   work() {
-    return this.employee.work() + " under Manager.";
+    return this.employee.work() + ' under Manager.';
   }
 }

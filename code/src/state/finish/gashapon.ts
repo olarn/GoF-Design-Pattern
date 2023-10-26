@@ -1,10 +1,10 @@
-import { GashaponCapsule } from "./gashaponCapsule";
-import { GashaponMachineState } from "./gashaponMachineState";
-import { GashaponDictionary } from "./states/gashaponState";
-import { HasCoinState } from "./states/hasCoinState";
-import { OutOfCapsuleState } from "./states/outOfCapsuleState";
-import { ReadyState } from "./states/readyState";
-import { ReadyToSpinState } from "./states/readyToSpinState";
+import { GashaponCapsule } from './gashaponCapsule';
+import { GashaponMachineState } from './gashaponMachineState';
+import { GashaponDictionary } from './states/gashaponState';
+import { HasCoinState } from './states/hasCoinState';
+import { OutOfCapsuleState } from './states/outOfCapsuleState';
+import { ReadyState } from './states/readyState';
+import { ReadyToSpinState } from './states/readyToSpinState';
 
 export class Gashapon {
   private remainCapsule: GashaponCapsule[] = [];
@@ -44,7 +44,7 @@ export class Gashapon {
   issueCapsule(): GashaponCapsule {
     const capsule = this.remainCapsule.pop();
     if (!capsule) {
-      throw new Error("Out of capsule");
+      throw new Error('Out of capsule');
     }
 
     this.remainCapsule.slice(0);

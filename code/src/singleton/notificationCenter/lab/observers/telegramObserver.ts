@@ -1,4 +1,4 @@
-import { Observer } from "./observer";
+import { Observer } from './observer';
 
 export class TelegramObserver implements Observer {
   public notify(message: string): void {

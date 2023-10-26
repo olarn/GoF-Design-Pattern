@@ -1,9 +1,9 @@
-import { EmptyPackage } from "./emptyPackage";
-import { FixedPackage } from "./fixedPackage";
-import { HourFlexPackage } from "./hourFlexPackage";
-import { PackageType } from "./packageType";
-import { BillingPackage } from "./billingPackage";
-import { SteppingPackage } from "./steppingPackage";
+import { EmptyPackage } from './emptyPackage';
+import { FixedPackage } from './fixedPackage';
+import { HourFlexPackage } from './hourFlexPackage';
+import { PackageType } from './packageType';
+import { BillingPackage } from './billingPackage';
+import { SteppingPackage } from './steppingPackage';
 
 export class PackageFactory {
   public static buildPackage(packageType: PackageType): BillingPackage {

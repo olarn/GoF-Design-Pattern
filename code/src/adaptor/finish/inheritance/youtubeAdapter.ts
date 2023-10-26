@@ -1,5 +1,5 @@
-import { SpotifyAPI } from "./spotifyAPI";
-import { Youtube } from "./youtubeAPI";
+import { SpotifyAPI } from './spotifyAPI';
+import { Youtube } from './youtubeAPI';
 
 export class YoutubeAdapter extends Youtube implements SpotifyAPI {
   connect(): string {

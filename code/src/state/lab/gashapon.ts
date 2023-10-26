@@ -1,5 +1,5 @@
-import { GashaponCapsule } from "./gashaponCapsule";
-import { GashaponMachineState } from "./gashaponMachineState";
+import { GashaponCapsule } from './gashaponCapsule';
+import { GashaponMachineState } from './gashaponMachineState';
 
 export class Gashapon {
   private remainCapsule: GashaponCapsule[] = [];
@@ -11,10 +11,10 @@ export class Gashapon {
 
   insertCoin() {
     if (this.state === GashaponMachineState.readyToSpin) {
-      throw new Error("Cannot insert coin when ready to spin");
+      throw new Error('Cannot insert coin when ready to spin');
     }
     if (this.state === GashaponMachineState.outOfCapsule) {
-      throw new Error("Cannot insert coin when out of capsule");
+      throw new Error('Cannot insert coin when out of capsule');
     }
     if (
       this.state == GashaponMachineState.ready ||
@@ -54,10 +54,10 @@ export class Gashapon {
       this.state === GashaponMachineState.ready ||
       this.state === GashaponMachineState.hasCoin
     ) {
-      throw new Error("Please insert more coin");
+      throw new Error('Please insert more coin');
     }
     if (this.state === GashaponMachineState.outOfCapsule) {
-      throw new Error("Cannot spin when out of capsule");
+      throw new Error('Cannot spin when out of capsule');
     }
 
     this.coins = 0;
@@ -72,7 +72,7 @@ export class Gashapon {
       return capsule;
     }
 
-    throw new Error("The machine has some problem. Please eject coins.");
+    throw new Error('The machine has some problem. Please eject coins.');
   }
 
   reload(capsules: GashaponCapsule[]) {
