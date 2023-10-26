@@ -1,5 +1,5 @@
 import WebSocket from "ws";
-import { IWebSocketProxy } from 'proxy/finish/IWebSocketProxy';
+import { IWebSocketProxy } from "proxy/finish/IWebSocketProxy";
 
 export class WebSocketProxyImpl implements IWebSocketProxy {
   private readonly url: string;
@@ -17,7 +17,6 @@ export class WebSocketProxyImpl implements IWebSocketProxy {
     } catch (e) {
       throw e;
     }
-
   }
 
   send(data: string) {
@@ -27,22 +26,20 @@ export class WebSocketProxyImpl implements IWebSocketProxy {
     this.socket.send(data);
   }
 
-
   initializeWebSocketCallBack() {
     if (this.socket) {
-      this.socket.on('open', (code: number, reason: string) => {
+      this.socket.on("open", (code: number, reason: string) => {
         console.log(`WebSocket open with code ${code} and reason: ${reason}`);
       });
 
-      this.socket.on('message', (message: string) => {
+      this.socket.on("message", (message: string) => {
         console.log(`Received: ${message}`);
       });
 
-      this.socket.on('close', (code: number, reason: string) => {
+      this.socket.on("close", (code: number, reason: string) => {
         console.log(`WebSocket closed with code ${code} and reason: ${reason}`);
       });
     }
-
   }
 }
 

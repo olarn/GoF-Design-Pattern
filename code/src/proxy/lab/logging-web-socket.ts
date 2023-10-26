@@ -1,4 +1,4 @@
-import WebSocket from 'ws';
+import WebSocket from "ws";
 
 class LoggingWebSocket {
   private readonly url: string;
@@ -13,7 +13,7 @@ class LoggingWebSocket {
     try {
       this.socket = new WebSocket(this.url);
     } catch (e) {
-      console.error(e)
+      console.error(e);
     }
   }
 
@@ -23,17 +23,20 @@ class LoggingWebSocket {
         const date = new Date();
 
         const options: Intl.DateTimeFormatOptions = {
-          weekday: 'long',
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          timeZoneName: 'short',
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          timeZoneName: "short",
         };
 
-        const formattedDate: string = new Intl.DateTimeFormat('en-US', options).format(date);
+        const formattedDate: string = new Intl.DateTimeFormat(
+          "en-US",
+          options,
+        ).format(date);
 
         data = `${formattedDate}`;
       }

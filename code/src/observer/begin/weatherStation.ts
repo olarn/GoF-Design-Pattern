@@ -1,21 +1,21 @@
 import { WeatherData } from "./weatherData";
 
 export class WeatherStation {
-    private data = new WeatherData(0, 0, 0);
-    
-    public update(data: WeatherData): void {
-        this.data = data;
-    }
+  private data = new WeatherData(0, 0, 0);
 
-    updateCurrentConditionsDisplay(): string {
-        return `Current conditions: ${this.data.temperature}C degrees and ${this.data.humidity}% humidity`;
-    }
+  public update(data: WeatherData): void {
+    this.data = data;
+  }
 
-    updateStatisticsDisplay(): string {
-        return `Avg/Max/Min temperature = ${this.data.temperature}/${this.data.humidity}/${this.data.pressure}`;
-    }
+  updateCurrentConditionsDisplay(): string {
+    return `Current conditions: ${this.data.temperature}C degrees and ${this.data.humidity}% humidity`;
+  }
 
-    updateForecastDisplay(): string {
-        return `Forecast: More of the same`;
-    }
+  updateStatisticsDisplay(): string {
+    return `Avg/Max/Min temperature = ${this.data.temperature}/${this.data.humidity}/${this.data.pressure}`;
+  }
+
+  updateForecastDisplay(): string {
+    return `Forecast: More of the same`;
+  }
 }

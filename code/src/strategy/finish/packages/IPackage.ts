@@ -1,3 +1,3 @@
 export interface IPackage {
-    monthlyBill(totalHours: number): number;
+  monthlyBill(totalHours: number): number;
 }

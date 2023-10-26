@@ -1,32 +1,31 @@
 export class CoffeeMachine {
-    private waterIsBoilded = false;
-    private CoffeeGrindsIsBrewed = false;
-    private pouredInCup = false;
-    private sugarAndMilkAdded = false;
+  private waterIsBoilded = false;
+  private CoffeeGrindsIsBrewed = false;
+  private pouredInCup = false;
+  private sugarAndMilkAdded = false;
 
-    public brew(): string {
-        this.boildWater();
-        this.brewCoffeeGrinds();
-        this.pourInCup();
-        this.addSugarAndMilk();
-        
-        return 'Here is your coffee!';
-    }
+  public brew(): string {
+    this.boildWater();
+    this.brewCoffeeGrinds();
+    this.pourInCup();
+    this.addSugarAndMilk();
 
-    private brewCoffeeGrinds() {
-        this.CoffeeGrindsIsBrewed = true;
+    return "Here is your coffee!";
+  }
 
-    }
+  private brewCoffeeGrinds() {
+    this.CoffeeGrindsIsBrewed = true;
+  }
 
-    private boildWater() {
-        this.waterIsBoilded = true; 
-    }
+  private boildWater() {
+    this.waterIsBoilded = true;
+  }
 
-    private pourInCup() {
-        this.pouredInCup = true;
-    }
+  private pourInCup() {
+    this.pouredInCup = true;
+  }
 
-    private addSugarAndMilk() {
-        this.sugarAndMilkAdded = true;
-    }
+  private addSugarAndMilk() {
+    this.sugarAndMilkAdded = true;
+  }
 }

@@ -1,54 +1,56 @@
-import { Gashapon, } from "./gashapon";
+import { Gashapon } from "./gashapon";
 import { GashaponCapsule } from "./gashaponCapsule";
 import { GashaponMachineState } from "./gashaponMachineState";
 
-describe('Spin Gashapon', () => {
-    var gashapon = new Gashapon();
+describe("Spin Gashapon", () => {
+  var gashapon = new Gashapon();
 
-    beforeEach(() => {
-        gashapon = new Gashapon();
-    });
+  beforeEach(() => {
+    gashapon = new Gashapon();
+  });
 
-    it('should throw error to tell you to add more coin if state is `ready` or `hasCoin`', () => {
-        // given
-        gashapon.reload([new GashaponCapsule('Luffy')]);
+  it("should throw error to tell you to add more coin if state is `ready` or `hasCoin`", () => {
+    // given
+    gashapon.reload([new GashaponCapsule("Luffy")]);
 
-        // when -> then
-        expect(() => gashapon.spin()).toThrowError("Please insert more coin");
-        gashapon.insertCoin();
-        expect(() => gashapon.spin()).toThrowError("Please insert more coin");
-    });
+    // when -> then
+    expect(() => gashapon.spin()).toThrowError("Please insert more coin");
+    gashapon.insertCoin();
+    expect(() => gashapon.spin()).toThrowError("Please insert more coin");
+  });
 
-    it('should throw error if spin while state is `outOfCapsule`', () => {
-        expect(() => gashapon.spin()).toThrowError('Cannot spin when out of capsule');
-    });
+  it("should throw error if spin while state is `outOfCapsule`", () => {
+    expect(() => gashapon.spin()).toThrowError(
+      "Cannot spin when out of capsule",
+    );
+  });
 
-    it('should be able to spin when state is `readyToSpin`', () => {
-        gashapon.reload([
-            new GashaponCapsule('Luffy'),
-            new GashaponCapsule('Nami'),
-        ]);
+  it("should be able to spin when state is `readyToSpin`", () => {
+    gashapon.reload([
+      new GashaponCapsule("Luffy"),
+      new GashaponCapsule("Nami"),
+    ]);
 
-        // when
-        gashapon.insertCoin();
-        gashapon.insertCoin();
-        gashapon.insertCoin();
-        gashapon.insertCoin();
-        const nami = gashapon.spin();
+    // when
+    gashapon.insertCoin();
+    gashapon.insertCoin();
+    gashapon.insertCoin();
+    gashapon.insertCoin();
+    const nami = gashapon.spin();
 
-        // then
-        expect(nami?.getToy()).toBe('Nami');
-        expect(gashapon.getState()).toBe(GashaponMachineState.ready);
+    // then
+    expect(nami?.getToy()).toBe("Nami");
+    expect(gashapon.getState()).toBe(GashaponMachineState.ready);
 
-        // when
-        gashapon.insertCoin();
-        gashapon.insertCoin();
-        gashapon.insertCoin();
-        gashapon.insertCoin();
-        const luffy = gashapon.spin();
+    // when
+    gashapon.insertCoin();
+    gashapon.insertCoin();
+    gashapon.insertCoin();
+    gashapon.insertCoin();
+    const luffy = gashapon.spin();
 
-        // then
-        expect(luffy?.getToy()).toBe('Luffy');
-        expect(gashapon.getState()).toBe(GashaponMachineState.outOfCapsule);
-    });
+    // then
+    expect(luffy?.getToy()).toBe("Luffy");
+    expect(gashapon.getState()).toBe(GashaponMachineState.outOfCapsule);
+  });
 });

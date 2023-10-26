@@ -1,3 +1,1 @@
-export class Controller {
-    
-}
+export class Controller {}

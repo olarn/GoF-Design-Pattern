@@ -1,13 +1,13 @@
 import { Command } from "./command/command";
 
 export class Controller {
-    slot?: Command;
+  slot?: Command;
 
-    public setCommand(command: Command) {
-        this.slot = command;
-    }
+  public setCommand(command: Command) {
+    this.slot = command;
+  }
 
-    public buttonWasPressed() {
-        this.slot?.execute();
-    }
+  public buttonWasPressed() {
+    this.slot?.execute();
+  }
 }

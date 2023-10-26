@@ -7,80 +7,80 @@ import { ReadyState } from "./states/readyState";
 import { ReadyToSpinState } from "./states/readyToSpinState";
 
 export class Gashapon {
-    private remainCapsule: GashaponCapsule[] = [];
-    private requireCoins = 4;
-    private coins = 0;
-    private state: GashaponMachineState = GashaponMachineState.outOfCapsule;
+  private remainCapsule: GashaponCapsule[] = [];
+  private requireCoins = 4;
+  private coins = 0;
+  private state: GashaponMachineState = GashaponMachineState.outOfCapsule;
 
-    allStates: GashaponDictionary = {
-        [GashaponMachineState.ready]: new ReadyState(this),
-        [GashaponMachineState.hasCoin]: new HasCoinState(this),
-        [GashaponMachineState.readyToSpin]: new ReadyToSpinState(this),
-        [GashaponMachineState.outOfCapsule]: new OutOfCapsuleState(),
-        [GashaponMachineState.winnerChanceToSpin]: new ReadyToSpinState(this),
-    };
+  allStates: GashaponDictionary = {
+    [GashaponMachineState.ready]: new ReadyState(this),
+    [GashaponMachineState.hasCoin]: new HasCoinState(this),
+    [GashaponMachineState.readyToSpin]: new ReadyToSpinState(this),
+    [GashaponMachineState.outOfCapsule]: new OutOfCapsuleState(),
+    [GashaponMachineState.winnerChanceToSpin]: new ReadyToSpinState(this),
+  };
 
-    // === State methods
+  // === State methods
 
-    insertCoin() {
-        this.allStates[this.state].insertCoin();
+  insertCoin() {
+    this.allStates[this.state].insertCoin();
+  }
+
+  ejectCoins(): number {
+    return this.allStates[this.state].ejectCoins();
+  }
+
+  spin(): GashaponCapsule[] {
+    return this.allStates[this.state].spin();
+  }
+
+  reload(capsules: GashaponCapsule[]) {
+    capsules.forEach((capsule) => {
+      this.remainCapsule.push(capsule);
+    });
+    this.state = GashaponMachineState.ready;
+  }
+
+  issueCapsule(): GashaponCapsule {
+    const capsule = this.remainCapsule.pop();
+    if (!capsule) {
+      throw new Error("Out of capsule");
     }
 
-    ejectCoins(): number {
-        return this.allStates[this.state].ejectCoins();
-    }
+    this.remainCapsule.slice(0);
+    this.coins = 0;
+    return capsule;
+  }
 
-    spin(): GashaponCapsule[] {
-        return this.allStates[this.state].spin();
-    }
+  // === Gashapon Machine (or Context) methods
 
-    reload(capsules: GashaponCapsule[]) {
-        capsules.forEach(capsule => {
-            this.remainCapsule.push(capsule);
-        });
-        this.state = GashaponMachineState.ready;
-    }
+  getState(): GashaponMachineState {
+    return this.state;
+  }
 
-    issueCapsule(): GashaponCapsule {
-        const capsule = this.remainCapsule.pop();
-        if (!capsule) {
-            throw new Error('Out of capsule');
-        }
+  setState(state: GashaponMachineState) {
+    this.state = state;
+  }
 
-        this.remainCapsule.slice(0);
-        this.coins = 0;
-        return capsule
-    }
+  setCoin() {
+    this.coins += 1;
+  }
 
-    // === Gashapon Machine (or Context) methods
+  getCoins(): number {
+    return this.coins;
+  }
 
-    getState(): GashaponMachineState {
-        return this.state;
-    }
+  returnCoins(): number {
+    const coins = this.coins;
+    this.coins = 0;
+    return coins;
+  }
 
-    setState(state: GashaponMachineState) {
-        this.state = state;
-    }
+  getRequireCoins(): number {
+    return this.requireCoins;
+  }
 
-    setCoin() {
-        this.coins += 1;
-    }
-
-    getCoins(): number {
-        return this.coins;
-    }
-
-    returnCoins(): number {
-        const coins = this.coins;
-        this.coins = 0;
-        return coins;
-    }
-
-    getRequireCoins(): number {
-        return this.requireCoins;
-    }
-
-    getRemainCapsule(): number {
-        return this.remainCapsule.length;
-    }
+  getRemainCapsule(): number {
+    return this.remainCapsule.length;
+  }
 }

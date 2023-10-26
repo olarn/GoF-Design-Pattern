@@ -1,1 +1,1 @@
-console.log('Hello, Design Patterns');
+console.log("Hello, Design Patterns");

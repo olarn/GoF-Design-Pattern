@@ -1,18 +1,17 @@
 export class Employee {
-    work() {
-        return 'Employee is working';
-    }
+  work() {
+    return "Employee is working";
+  }
 }
 
 export class Manager {
-    private employee: Employee;
+  private employee: Employee;
 
-    constructor(employee: Employee) {
-        this.employee = employee;
-    }
+  constructor(employee: Employee) {
+    this.employee = employee;
+  }
 
-    work() {
-
-        return this.employee.work() + ' under Manager.';
-    }
+  work() {
+    return this.employee.work() + " under Manager.";
+  }
 }

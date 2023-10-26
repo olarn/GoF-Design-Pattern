@@ -1,3 +1,3 @@
 export interface JSONBuilderDecorator {
-    build(data: any): string;
+  build(data: any): string;
 }

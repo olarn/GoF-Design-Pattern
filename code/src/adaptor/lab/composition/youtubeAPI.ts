@@ -1,22 +1,22 @@
 export class YoutubeMusic {
-    name: string = ""
+  name: string = "";
 }
 
 export interface YoutubeAPI {
-    connect(): string;
-    getMusicLibrary(): YoutubeMusic[];
+  connect(): string;
+  getMusicLibrary(): YoutubeMusic[];
 }
 
 export class Youtube implements YoutubeAPI {
-    connect() {
-        return 'Youtube';
-    }
+  connect() {
+    return "Youtube";
+  }
 
-    getMusicLibrary(): YoutubeMusic[] {
-        return [
-            { name: 'youtube.song1' },
-            { name: 'youtube.song2' },
-            { name: 'youtube.song3' }
-        ];
-    }
+  getMusicLibrary(): YoutubeMusic[] {
+    return [
+      { name: "youtube.song1" },
+      { name: "youtube.song2" },
+      { name: "youtube.song3" },
+    ];
+  }
 }

@@ -1,10 +1,13 @@
-import xlsx from 'node-xlsx';
-import AbstractFileReader from '../abstract-file-reader';
+import xlsx from "node-xlsx";
+import AbstractFileReader from "../abstract-file-reader";
 
 class TransformDataXlsxService extends AbstractFileReader {
   readFile(fileName: string) {
     const workSheetsFromFile = xlsx.parse(`${__dirname}/${fileName}`);
-    return workSheetsFromFile as { name: string, data: string [][] | number [][] }[]
+    return workSheetsFromFile as {
+      name: string;
+      data: string[][] | number[][];
+    }[];
   }
 
   cleanData(rawFileData: string[][] | number[][]): string[][] | number[][] {
@@ -12,5 +15,4 @@ class TransformDataXlsxService extends AbstractFileReader {
   }
 }
 
-
-export default TransformDataXlsxService
+export default TransformDataXlsxService;

@@ -1,7 +1,7 @@
 export enum GashaponMachineState {
-    ready = 'ready',
-    hasCoin = 'hasCoin',
-    readyToSpin = 'readyToSpin',
-    outOfCapsule = 'outOfCapsule',
-    winnerChanceToSpin = 'winnerChanceToSpin',
+  ready = "ready",
+  hasCoin = "hasCoin",
+  readyToSpin = "readyToSpin",
+  outOfCapsule = "outOfCapsule",
+  winnerChanceToSpin = "winnerChanceToSpin",
 }
