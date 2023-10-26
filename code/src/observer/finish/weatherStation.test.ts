@@ -1,5 +1,5 @@
 import { WeatherData } from "./weatherData";
-import { WeatherForecast } from "./weatherObserver";
+import { WeatherForecast, WeatherStatistics } from "./weatherObserver";
 import { WeatherStation } from "./weatherStation";
 
 describe('Weather station measurement changed', () => {
@@ -22,17 +22,24 @@ describe('Weather station measurement changed', () => {
 
     it('should notify observers to display current weather condition', () => {
         // given 
-        const weatherStation = new WeatherStation();        
+        const weatherStation = new WeatherStation();  
+        
         const weatherForecast = new WeatherForecast();
         const weatherForecastDisplay = jest.spyOn(weatherForecast, 'display');
 
+        const weatherStatistics = new WeatherStatistics();
+        const weatherStatisticsDisplay = jest.spyOn(weatherStatistics, 'display');
+
         weatherStation.registerObserver(weatherForecast);
+        weatherStation.registerObserver(weatherStatistics);
 
         // when
         const weatherData = new WeatherData(32.0, 0.8, 1.0);
         weatherStation.update(weatherData);
 
-        expect(weatherForecast.display()).toBe('Forecast: 32C degrees and 0.8% humidity');
+        expect(weatherForecast.display()).toBe('Forecast: 32℃ degrees and 0.8% humidity');
         expect(weatherForecastDisplay).toHaveBeenCalled();
+        expect(weatherStatistics.display()).toBe('Avg/Max/Min temperature = 32/0.8/1');
+        expect(weatherStatisticsDisplay).toHaveBeenCalled();
     });
 });

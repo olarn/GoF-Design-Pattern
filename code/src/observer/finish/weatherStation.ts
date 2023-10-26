@@ -1,3 +1,4 @@
+import { WeatherObserver } from "observer/lab/weatherObserver";
 import { WeatherData } from "./weatherData";
 import { WeatherForecast } from "./weatherObserver";
 
@@ -11,9 +12,9 @@ export class WeatherStation {
         }
     }
 
-    private observers: WeatherForecast[] = [];
+    private observers: WeatherObserver[] = [];
 
-    public registerObserver(weatherForecast: WeatherForecast) {
+    public registerObserver(weatherForecast: WeatherObserver) {
         this.observers.push(weatherForecast);
     }
     
