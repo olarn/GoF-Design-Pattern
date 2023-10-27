@@ -36,6 +36,7 @@ describe('[State - finish] Gashapon Machine', () => {
     gashapon.insertCoin();
     gashapon.insertCoin();
     gashapon.insertCoin();
+
     const capsult = gashapon.spin();
     expect(capsult.length).toBe(1);
     expect(capsult[0]?.getToy()).toBe('Jinbei');
