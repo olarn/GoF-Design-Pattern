@@ -44,4 +44,16 @@ describe('[Strategy - finish] Generate monthly billing based-on total hours and 
     // then
     expect(billing.monthlyBill()).toBe(80.25);
   });
+
+  it('should return 50 for stepping package', () => {
+    // given
+    const totalHours = 50.0;
+    const packageType = PackageType.STEPPING;
+
+    // when
+    const billing = new Billing(totalHours, packageType);
+
+    // then
+    expect(billing.monthlyBill()).toBe(53.5);
+  });
 });
