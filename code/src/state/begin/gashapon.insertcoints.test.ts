@@ -2,7 +2,7 @@ import { Gashapon } from './gashapon';
 import { GashaponCapsule } from './gashaponCapsule';
 import { GashaponMachineState } from './gashaponMachineState';
 
-describe('Insert coins', () => {
+describe('[State - begin] Insert coins', () => {
   var gashapon = new Gashapon();
 
   beforeEach(() => {
@@ -33,7 +33,7 @@ describe('Insert coins', () => {
 
     // when -> then
     expect(() => gashapon.insertCoin()).toThrowError(
-      'Cannot insert coin when ready to spin',
+      'Cannot insert coin when ready to spin'
     );
   });
 
@@ -55,7 +55,7 @@ describe('Insert coins', () => {
 
   it('should throw error if insert coin and current state is `outOfStock`', () => {
     expect(() => gashapon.insertCoin()).toThrowError(
-      'Cannot insert coin when out of capsule',
+      'Cannot insert coin when out of capsule'
     );
   });
 });

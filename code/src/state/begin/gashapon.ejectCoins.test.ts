@@ -2,7 +2,7 @@ import { Gashapon } from './gashapon';
 import { GashaponCapsule } from './gashaponCapsule';
 import { GashaponMachineState } from './gashaponMachineState';
 
-describe('Eject coins', () => {
+describe('[State - begin] Eject coins', () => {
   var gashapon = new Gashapon();
 
   beforeEach(() => {
@@ -29,13 +29,13 @@ describe('Eject coins', () => {
 
     // when -> then
     expect(() => gashapon.ejectCoins()).toThrowError(
-      "You haven't insert any coin",
+      "You haven't insert any coin"
     );
   });
 
   it('should throw error if eject coins when state is `outOfCapsule`', () => {
     expect(() => gashapon.ejectCoins()).toThrowError(
-      "You haven't insert any coin",
+      "You haven't insert any coin"
     );
   });
 });

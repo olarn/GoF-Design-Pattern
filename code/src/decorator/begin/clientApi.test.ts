@@ -1,7 +1,7 @@
 import { Customer } from './customer';
 import { CustomerApi } from './customerApi';
 
-describe('Build Response', () => {
+describe('[Decorator - begin] Build Response', () => {
   it('should build response', () => {
     // given
     const api = new CustomerApi();

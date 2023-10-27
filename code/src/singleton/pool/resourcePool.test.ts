@@ -1,6 +1,6 @@
 import { ResourcePool } from './resourcePool';
 
-describe('ResourcePool', () => {
+describe('[Singleton - Pool example] ResourcePool', () => {
   it('should provide only 3 objects and no more', () => {
     // given
     const resourcePool = ResourcePool.getInstance();

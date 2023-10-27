@@ -1,7 +1,7 @@
 import { CoffeeMachine } from './coffeeMachine';
 import { TeaMachine } from './teaMachine';
 
-describe('BrewMachine', () => {
+describe('[Template - example] BrewMachine', () => {
   it('should be able to brew coffee', () => {
     const coffeeMachine = new CoffeeMachine();
     expect(coffeeMachine.brew()).toBe('Here is your coffee!');

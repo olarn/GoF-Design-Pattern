@@ -3,7 +3,7 @@ import { Customer } from './customer';
 import { CustomerApi } from './customerApi';
 import { EncryptedCustomerApi } from './encryptedCustomerApi';
 
-describe('Customer API', () => {
+describe('[Decorator - finish] Customer API', () => {
   it('should get plain customer object', () => {
     // given
     const api = new CustomerApi();
@@ -27,11 +27,25 @@ describe('Customer API', () => {
     expect(customer1.name).toBe('John');
   });
 
-  it('should get encrypted customer object from ', () => {
+  it('should get encrypted customer object from cache', () => {
     // given
     const api = new CustomerApi();
     const cachedApi = new CachedCustomerApi(api);
     const encryptedApi = new EncryptedCustomerApi(cachedApi);
+
+    // when
+    const customer: Customer = encryptedApi.get();
+
+    // then
+    expect(customer.name).toBe('encrypted(John)');
+    expect(customer.lastName).toBe('encrypted(Doe)');
+    expect(customer.age).toBe(30);
+  });
+
+  it('should be able to get encrypted customer directly without cache', () => {
+    // given
+    const api = new CustomerApi();
+    const encryptedApi = new EncryptedCustomerApi(api);
 
     // when
     const customer: Customer = encryptedApi.get();

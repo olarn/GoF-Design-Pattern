@@ -2,10 +2,10 @@ import LoggingWebSocketProxy from './logging-web-socket-proxy';
 import WebSocket from 'ws';
 
 jest.mock('ws');
-describe('LoggingWebSocketProxy', function () {
+describe('[Proxy inheritance - finish] LoggingWebSocketProxy', function () {
   it('should have call websocket send with params hello.', function () {
     const loggingWebSocketProxy = new LoggingWebSocketProxy(
-      'ws://example.com/socket',
+      'ws://example.com/socket'
     );
 
     loggingWebSocketProxy.sendLogging('Hello');
@@ -15,13 +15,13 @@ describe('LoggingWebSocketProxy', function () {
 
   it('should have call websocket send with Monday, October 2, 2023 at 07:00:00 AM GMT+7', function () {
     const loggingWebSocketProxy = new LoggingWebSocketProxy(
-      'ws://example.com/socket',
+      'ws://example.com/socket'
     );
     jest.useFakeTimers().setSystemTime(new Date('2023-10-02'));
     loggingWebSocketProxy.connect();
     loggingWebSocketProxy.sendLogging('now');
     expect(WebSocket.prototype.send).toHaveBeenCalledWith(
-      'Monday, October 2, 2023 at 07:00:00 AM GMT+7',
+      'Monday, October 2, 2023 at 07:00:00 AM GMT+7'
     );
   });
 });

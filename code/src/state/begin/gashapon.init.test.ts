@@ -2,7 +2,7 @@ import { Gashapon } from './gashapon';
 import { GashaponCapsule } from './gashaponCapsule';
 import { GashaponMachineState } from './gashaponMachineState';
 
-describe('Init Gashapon', () => {
+describe('[State - begin] Init Gashapon', () => {
   var gashapon = new Gashapon();
 
   beforeEach(() => {

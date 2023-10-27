@@ -1,7 +1,7 @@
 import { Gashapon } from './gashapon';
 import { GashaponCapsule } from './gashaponCapsule';
 
-describe('Gashapon Machine', () => {
+describe('[State - lab] Gashapon Machine', () => {
   const gashapon = new Gashapon();
 
   beforeAll(() => {
@@ -13,7 +13,7 @@ describe('Gashapon Machine', () => {
 
   it('usage in real world', () => {
     expect(() => gashapon.ejectCoins()).toThrowError(
-      "You haven't insert any coin",
+      "You haven't insert any coin"
     );
 
     gashapon.insertCoin();
@@ -28,7 +28,7 @@ describe('Gashapon Machine', () => {
     gashapon.insertCoin();
     expect(gashapon.getCoins()).toBe(4);
     expect(() => gashapon.insertCoin()).toThrowError(
-      'Cannot insert coin when ready to spin',
+      'Cannot insert coin when ready to spin'
     );
     expect(gashapon.ejectCoins()).toBe(4);
 
@@ -48,13 +48,13 @@ describe('Gashapon Machine', () => {
     expect(gashapon.getState()).toBe('outOfCapsule');
     expect(gashapon.getRemainCapsule()).toBe(0);
     expect(() => gashapon.insertCoin()).toThrowError(
-      'Cannot insert coin when out of capsule',
+      'Cannot insert coin when out of capsule'
     );
     expect(() => gashapon.spin()).toThrowError(
-      'Cannot spin when out of capsule',
+      'Cannot spin when out of capsule'
     );
     expect(() => gashapon.ejectCoins()).toThrowError(
-      "You haven't insert any coin",
+      "You haven't insert any coin"
     );
   });
 });

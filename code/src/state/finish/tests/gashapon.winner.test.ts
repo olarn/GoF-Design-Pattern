@@ -7,7 +7,7 @@ import { ReadyState } from '../states/readyState';
 import { ReadyToSpinState } from '../states/readyToSpinState';
 import { WinnerChanceToSpin } from '../states/winnerChanceToSpin';
 
-describe('Winner 2 Gashapon capsules', () => {
+describe('[State - finish] Winner 2 Gashapon capsules', () => {
   it('should activate winnerChance state instede of normal readyToSpin', () => {
     // Given
     const gashapon = new Gashapon();

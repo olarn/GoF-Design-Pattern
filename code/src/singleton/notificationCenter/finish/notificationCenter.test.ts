@@ -3,7 +3,7 @@ import { DiscordObserver } from './observers/discordObserver';
 import { SlackObserver } from './observers/slackObserver';
 import { TelegramObserver } from './observers/telegramObserver';
 
-describe('NotificationCenter', () => {
+describe('[Singleton - finish] NotificationCenter', () => {
   it('should notify on Slack and Discord (only 2), not telegram.', () => {
     // given
     const notificationCenter = NotificationCenter.getInstance();

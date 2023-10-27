@@ -1,7 +1,7 @@
 import { Billing } from './billing';
 import { PackageType } from './packages/packageType';
 
-describe('Generate monthly billing based-on total hours and package type', () => {
+describe('[Strategy - finish] Generate monthly billing based-on total hours and package type', () => {
   it('should always return package price for fixed package', () => {
     // given
     const totalHours = 10;

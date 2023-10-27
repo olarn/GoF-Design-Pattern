@@ -1,17 +1,17 @@
 import { PizzaOrder, PizzaSize, PizzaStyle, PizzaType } from './pizza';
 import { PizzaStore } from './pizzaStore';
 
-describe('orderPizza from pizza store', () => {
+describe('[Factory - finish] OrderPizza from pizza store', () => {
   it('should return an Italian pizza', () => {
     const pizzaStore = new PizzaStore();
     const order = new PizzaOrder(
       PizzaStyle.Italian,
       PizzaType.Classic,
-      PizzaSize.Small,
+      PizzaSize.Small
     );
     const pizza = pizzaStore.orderPizza(order);
     expect(pizza.description()).toBe(
-      'Pizza Classic, Small, Thin, Mozzarella, Tomato, Basil',
+      'Pizza Classic, Small, Thin, Mozzarella, Tomato, Basil'
     );
   });
 
@@ -20,11 +20,11 @@ describe('orderPizza from pizza store', () => {
     const order = new PizzaOrder(
       PizzaStyle.Italian,
       PizzaType.Cheese,
-      PizzaSize.Small,
+      PizzaSize.Small
     );
     const pizza = pizzaStore.orderPizza(order);
     expect(pizza.description()).toBe(
-      'Pizza Cheese, Small, Thick, Parmesan, Basil, Olive, Onion',
+      'Pizza Cheese, Small, Thick, Parmesan, Basil, Olive, Onion'
     );
   });
 
@@ -33,11 +33,11 @@ describe('orderPizza from pizza store', () => {
     const order = new PizzaOrder(
       PizzaStyle.American,
       PizzaType.Seafood,
-      PizzaSize.Small,
+      PizzaSize.Small
     );
     const pizza = pizzaStore.orderPizza(order);
     expect(pizza.description()).toBe(
-      'Pizza Seafood, Small, Thick, Mozzarella, Tomato, Onion, Shrimp, Tuna',
+      'Pizza Seafood, Small, Thick, Mozzarella, Tomato, Onion, Shrimp, Tuna'
     );
   });
 });

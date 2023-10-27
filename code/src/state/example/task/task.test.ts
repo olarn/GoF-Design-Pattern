@@ -1,6 +1,6 @@
 import { Task, TaskStatus } from './task';
 
-describe('Task', () => {
+describe('[State - example] Task', () => {
   it('should create and change task state based on task action', () => {
     const task = new Task();
     expect(task.getState()).toBe(TaskStatus.Opened);

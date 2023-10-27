@@ -3,7 +3,7 @@ import { SmartBulb } from './smartHomeTheater/smartBulb';
 import { SmartSpeaker } from './smartHomeTheater/smartSpeaker';
 import { SmartTV } from './smartHomeTheater/smartTV';
 
-describe('Smart Home Theater', () => {
+describe('[Facade - finish] Smart Home Theater', () => {
   const expectedOnStatus =
     'TV: on, input: hdmi1, picture mode: movie\n' +
     'Speaker: Front Left is on, volume: 10, base: 5, triple: 5\n' +

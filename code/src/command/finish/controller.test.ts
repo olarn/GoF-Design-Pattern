@@ -4,8 +4,8 @@ import { LightOnCommand } from './command/lightOnCommand';
 import { Controller } from './controller';
 import { Light } from './devices';
 
-describe('Controller', () => {
-  it('should ececute device taht wrapped with command object', () => {
+describe('[Command - finish] Controller', () => {
+  it('should execute device taht wrapped with command object', () => {
     const controller = new Controller();
 
     // light on

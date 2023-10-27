@@ -1,7 +1,7 @@
 import { MediaPlayer } from './mediaPlayer';
 import { SpotifyAPI } from './spotifyAPI';
 
-describe('Media Player', () => {
+describe('[Adaptor - begin] Media Player', () => {
   it('should get nothing if not specific provider.', () => {
     const mediaPlayer = new MediaPlayer();
     expect(mediaPlayer.connect()).toEqual('');

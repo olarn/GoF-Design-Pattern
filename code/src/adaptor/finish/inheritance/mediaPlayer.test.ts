@@ -2,7 +2,7 @@ import { MediaPlayer } from './mediaPlayer';
 import { SpotifyAPI } from './spotifyAPI';
 import { YoutubeAdapter as YoutubeAdapter } from './youtubeAdapter';
 
-describe('Media Player', () => {
+describe('[Adaptor inheritance - finish] Media Player', () => {
   it('should get nothing if not specific provider.', () => {
     const mediaPlayer = new MediaPlayer();
     expect(mediaPlayer.connect()).toEqual('');

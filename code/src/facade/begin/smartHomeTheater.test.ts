@@ -2,7 +2,7 @@ import { SmartBulb } from './smartHomeTheater/smartBulb';
 import { SmartSpeaker } from './smartHomeTheater/smartSpeaker';
 import { SmartTV } from './smartHomeTheater/smartTV';
 
-describe('Smart Home Theater', () => {
+describe('[Facade - begin] Smart Home Theater', () => {
   it('should be setup for see the drama movie', () => {
     const tv = new SmartTV();
 
@@ -46,25 +46,25 @@ describe('Smart Home Theater', () => {
     livingRoomDownloght.setBrightness(50);
 
     expect(tv.currentStatus()).toEqual(
-      'TV: on, input: hdmi1, picture mode: movie',
+      'TV: on, input: hdmi1, picture mode: movie'
     );
     expect(frontLeftSpeaker.currentStatus()).toEqual(
-      'Speaker: Front Left is on, volume: 10, base: 5, triple: 5',
+      'Speaker: Front Left is on, volume: 10, base: 5, triple: 5'
     );
     expect(frontRightSpeaker.currentStatus()).toEqual(
-      'Speaker: Front Right is on, volume: 10, base: 5, triple: 5',
+      'Speaker: Front Right is on, volume: 10, base: 5, triple: 5'
     );
     expect(subwoofer.currentStatus()).toEqual(
-      'Speaker: Subwoofer is on, volume: 10, base: 5, triple: 5',
+      'Speaker: Subwoofer is on, volume: 10, base: 5, triple: 5'
     );
     expect(livingRoomBulb1.currentStatus()).toEqual(
-      'Bulb: Living Room Bulb 1 is on, color: yellow, brightness: 50',
+      'Bulb: Living Room Bulb 1 is on, color: yellow, brightness: 50'
     );
     expect(livingRoomBulb2.currentStatus()).toEqual(
-      'Bulb: Living Room Bulb 2 is on, color: yellow, brightness: 50',
+      'Bulb: Living Room Bulb 2 is on, color: yellow, brightness: 50'
     );
     expect(livingRoomDownloght.currentStatus()).toEqual(
-      'Bulb: Living Room Down Light is on, color: orange, brightness: 50',
+      'Bulb: Living Room Down Light is on, color: orange, brightness: 50'
     );
 
     tv.turnOff();
@@ -77,20 +77,20 @@ describe('Smart Home Theater', () => {
 
     expect(tv.currentStatus()).toEqual('TV: off');
     expect(frontLeftSpeaker.currentStatus()).toEqual(
-      'Speaker: Front Left is off',
+      'Speaker: Front Left is off'
     );
     expect(frontRightSpeaker.currentStatus()).toEqual(
-      'Speaker: Front Right is off',
+      'Speaker: Front Right is off'
     );
     expect(subwoofer.currentStatus()).toEqual('Speaker: Subwoofer is off');
     expect(livingRoomBulb1.currentStatus()).toEqual(
-      'Bulb: Living Room Bulb 1 is off',
+      'Bulb: Living Room Bulb 1 is off'
     );
     expect(livingRoomBulb2.currentStatus()).toEqual(
-      'Bulb: Living Room Bulb 2 is off',
+      'Bulb: Living Room Bulb 2 is off'
     );
     expect(livingRoomDownloght.currentStatus()).toEqual(
-      'Bulb: Living Room Down Light is off',
+      'Bulb: Living Room Down Light is off'
     );
   });
 });

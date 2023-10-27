@@ -3,7 +3,7 @@ import { SpotifyAPI } from './spotifyAPI';
 import { Youtube } from './youtubeAPI';
 import { YoutubeAdapter } from './youtubeAdapter';
 
-describe('Media Player', () => {
+describe('[Adaptor composition - finish] Media Player', () => {
   it('should be able to play musics from Spotify playlist.', () => {
     const mediaPlayer = new MediaPlayer();
     expect(mediaPlayer.connect()).toEqual('');

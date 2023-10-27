@@ -1,6 +1,6 @@
 import { Singleton } from './singleton';
 
-describe('Singleton', () => {
+describe('[Singleton - simple demo] Singleton', () => {
   it('should always has the same object', () => {
     // given
     const instance1 = Singleton.getInstance();

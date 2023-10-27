@@ -2,7 +2,7 @@ import { Gashapon } from './gashapon';
 import { GashaponCapsule } from './gashaponCapsule';
 import { GashaponMachineState } from './gashaponMachineState';
 
-describe('Spin Gashapon', () => {
+describe('[State - begin] Spin Gashapon', () => {
   var gashapon = new Gashapon();
 
   beforeEach(() => {
@@ -21,7 +21,7 @@ describe('Spin Gashapon', () => {
 
   it('should throw error if spin while state is `outOfCapsule`', () => {
     expect(() => gashapon.spin()).toThrowError(
-      'Cannot spin when out of capsule',
+      'Cannot spin when out of capsule'
     );
   });
 
