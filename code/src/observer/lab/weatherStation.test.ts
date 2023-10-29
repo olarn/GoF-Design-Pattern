@@ -1,7 +1,7 @@
 import { WeatherData } from './weatherData';
 import { WeatherStation } from './weatherStation';
 
-describe('[Observer - lab] Weather station measurement changed', () => {
+describe('[Observer - begin] Weather station measurement changed', () => {
   it('display should be called when measurement changed', () => {
     // given
     const weatherStation = new WeatherStation();

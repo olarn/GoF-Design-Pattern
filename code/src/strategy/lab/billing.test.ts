@@ -1,7 +1,6 @@
-import { Billing } from './billing';
-import { PackageType } from './packages/packageType';
+import { Billing, PackageType } from './billing';
 
-describe('[Strategy - lab] Generate monthly billing based-on total hours and package type', () => {
+describe('[Strategy - begin] Generate monthly billing based-on total hours and package type', () => {
   it('should always return package price for fixed package', () => {
     // given
     const totalHours = 10;
@@ -37,17 +36,4 @@ describe('[Strategy - lab] Generate monthly billing based-on total hours and pac
     // then
     expect(billing.monthlyBill()).toBe(0);
   });
-
-  // it('should return 80.25 for stepping package', () => {
-  //     // given
-  //     const totalHours = 100.0;
-  //     // Stepping Package is 1THB for first 50 Hr, 0.5THB for the rest
-  //     const packageType = PackageType.STEPPING;
-
-  //     // when
-  //     const billing = new Billing(totalHours, packageType);
-
-  //     // then
-  //     expect(billing.monthlyBill()).toBe(80.25);
-  // });
 });

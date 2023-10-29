@@ -1,6 +1,5 @@
-import { WeatherObserver } from 'observer/lab/weatherObserver';
 import { WeatherData } from './weatherData';
-import { WeatherForecast } from './weatherObserver';
+import { WeatherForecast, WeatherObserver } from './weatherObserver';
 
 export class WeatherStation {
   private data = new WeatherData(0, 0, 0);
@@ -27,6 +26,6 @@ export class WeatherStation {
   }
 
   updateForecastDisplay(): string {
-    return `Forecast: More of the same`;
+    return `Forecast: ${this.data.temperature}℃ degrees and ${this.data.humidity}% humidity`;
   }
 }
