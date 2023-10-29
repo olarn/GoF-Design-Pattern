@@ -1,5 +1,5 @@
-import { Api } from './api';
-import { Customer } from './customer';
+import { Api } from '../api';
+import { Customer } from '../customer';
 
 export class CustomerApi implements Api {
   public get(): Customer {

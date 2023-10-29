@@ -1,5 +1,5 @@
-import { Customer } from './customer';
-import { Api } from './api';
+import { Customer } from '../customer';
+import { Api } from '../api';
 
 export class EncryptedCustomerApi implements Api {
   constructor(private api: Api) {}
@@ -10,7 +10,7 @@ export class EncryptedCustomerApi implements Api {
     return new Customer(
       `encrypted(${customer.name})`,
       `encrypted(${customer.lastName})`,
-      customer.age,
+      customer.age
     );
   }
 }

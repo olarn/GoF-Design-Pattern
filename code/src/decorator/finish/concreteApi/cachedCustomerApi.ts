@@ -1,5 +1,5 @@
-import { Api } from './api';
-import { Customer } from './customer';
+import { Customer } from '../customer';
+import { Api } from '../api';
 
 export class CachedCustomerApi implements Api {
   private cachedCustomer: Customer | null = null;
