@@ -1,7 +1,6 @@
-import { Api } from '../api';
 import { Customer } from '../customer';
 
-export class CustomerApi implements Api {
+export class CustomerApi {
   public get(): Customer {
     return new Customer('John', 'Doe', 30);
   }

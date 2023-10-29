@@ -1,5 +1,5 @@
 import { Customer } from './customer';
-import { CustomerApi } from './customerApi';
+import { CustomerApi } from './decoratorApi/customerApi';
 
 describe('[Decorator - lab] Build Response', () => {
   it('should build response', () => {

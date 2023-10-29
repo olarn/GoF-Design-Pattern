@@ -1,7 +1,7 @@
 import { Customer } from './customer';
-import { CachedCustomerApi } from './concreteApi/cachedCustomerApi';
-import { CustomerApi } from './concreteApi/customerApi';
-import { EncryptedCustomerApi } from './concreteApi/encryptedCustomerApi';
+import { CachedCustomerApi } from './decoratorApi/cachedCustomerApi';
+import { CustomerApi } from './decoratorApi/customerApi';
+import { EncryptedCustomerApi } from './decoratorApi/encryptedCustomerApi';
 
 describe('[Decorator - finish] Customer API', () => {
   it('should get plain customer object', () => {
