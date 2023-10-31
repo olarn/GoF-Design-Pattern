@@ -71,9 +71,8 @@
 				3779B2742AB2EA570004FBE2 /* AppDelegate.swift */,
 				3779B2762AB2EA570004FBE2 /* SceneDelegate.swift */,
 				3779B27A2AB2EA570004FBE2 /* Main.storyboard */,
-				3779B2782AB2EA570004FBE2 /* DevicesViewController.swift */,
-				3779B28F2AB2F1C70004FBE2 /* SimpleOnOffTableViewCell.swift */,
-				37E24C882AB3030C001B01AC /* AddControllerViewController.swift */,
+				377F87A72AF090E400C24655 /* Device List */,
+				377F87A82AF090F200C24655 /* Add Device */,
 				3779B2882AB2F0760004FBE2 /* Command Pattern */,
 				3779B27D2AB2EA580004FBE2 /* Assets.xcassets */,
 				3779B27F2AB2EA580004FBE2 /* LaunchScreen.storyboard */,
@@ -85,12 +84,29 @@
 		3779B2882AB2F0760004FBE2 /* Command Pattern */ = {
 			isa = PBXGroup;
 			children = (
+				3779B28D2AB2F0F40004FBE2 /* Controller.swift */,
 				3779B2892AB2F08C0004FBE2 /* Command.swift */,
 				3779B28B2AB2F0AA0004FBE2 /* LightCommand.swift */,
 				37E964E92AB2F71F003BB0D2 /* GarageDoorCommand.swift */,
-				3779B28D2AB2F0F40004FBE2 /* Controller.swift */,
 			);
 			path = "Command Pattern";
+			sourceTree = "<group>";
+		};
+		377F87A72AF090E400C24655 /* Device List */ = {
+			isa = PBXGroup;
+			children = (
+				3779B2782AB2EA570004FBE2 /* DevicesViewController.swift */,
+				3779B28F2AB2F1C70004FBE2 /* SimpleOnOffTableViewCell.swift */,
+			);
+			path = "Device List";
+			sourceTree = "<group>";
+		};
+		377F87A82AF090F200C24655 /* Add Device */ = {
+			isa = PBXGroup;
+			children = (
+				37E24C882AB3030C001B01AC /* AddControllerViewController.swift */,
+			);
+			path = "Add Device";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
