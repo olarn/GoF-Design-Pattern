@@ -1,8 +1,9 @@
-import WebSocket from 'ws';
+import { WebSocket } from 'ws';
 import LoggingWebSocket from './logging-web-socket';
 
 jest.mock('ws');
-describe('[Proxt - begin] Logging Web Socket', function () {
+
+describe('[Proxy - begin] Logging Web Socket', function () {
   it('should return date time in human-readable format', function () {
     // given
     const loggingWebSocket = new LoggingWebSocket('ws://example.com/socket');
