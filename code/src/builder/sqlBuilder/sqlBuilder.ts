@@ -23,6 +23,14 @@ export class SqlBuilder {
     return this;
   }
 
+  innerJoin(table: string, condition: string) {
+    if (this.fromStmt === '') {
+      throw new Error('You must call from() before calling innerJoin()');
+    }
+    this.fromStmt += ` INNER JOIN ${table} ON ${condition}`;
+    return this;
+  }
+
   orderBy(field: string, order: string) {
     this.orderByStmt += ` ORDER BY ${field} ${order}`;
     return this;
