@@ -2,7 +2,7 @@ export class Pizza {
   public type: PizzaType = PizzaType.Cheese;
   public size: PizzaSize = PizzaSize.Undefined;
   public bread: BreadType = BreadType.Undefined;
-  public cheese: CheezeType = CheezeType.Undefined;
+  public cheese: CheeseType = CheeseType.Undefined;
   public sausage: boolean = false;
   public ingredients: Ingredient[] = [];
   description() {
@@ -36,7 +36,7 @@ export enum BreadType {
   Undefined = 'Undefined',
 }
 
-export enum CheezeType {
+export enum CheeseType {
   Mozzarella = 'Mozzarella',
   Parmesan = 'Parmesan',
   Undefined = 'Undefined',

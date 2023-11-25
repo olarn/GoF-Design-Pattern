@@ -1,6 +1,6 @@
 import {
   BreadType,
-  CheezeType,
+  CheeseType,
   Ingredient,
   Pizza,
   PizzaSize,
@@ -19,7 +19,7 @@ export class SeafoodPizzaFactory implements PizzaFactory {
     } else {
       pizza.bread = BreadType.Thick;
     }
-    pizza.cheese = CheezeType.Mozzarella;
+    pizza.cheese = CheeseType.Mozzarella;
     pizza.ingredients = [
       Ingredient.Tomato,
       Ingredient.Onion,

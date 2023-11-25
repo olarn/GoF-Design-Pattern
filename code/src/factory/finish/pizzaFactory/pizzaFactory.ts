@@ -1,6 +1,6 @@
 import {
   BreadType,
-  CheezeType,
+  CheeseType,
   Ingredient,
   Pizza,
   PizzaSize,

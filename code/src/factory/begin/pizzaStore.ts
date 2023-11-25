@@ -1,6 +1,6 @@
 import {
   BreadType,
-  CheezeType,
+  CheeseType,
   Ingredient,
   Pizza,
   PizzaSize,
@@ -19,13 +19,13 @@ export class PizzaStore {
       } else {
         pizza.bread = BreadType.Thick;
       }
-      pizza.cheese = CheezeType.Mozzarella;
+      pizza.cheese = CheeseType.Mozzarella;
       pizza.ingredients = [Ingredient.Tomato, Ingredient.Basil];
     } else if (type === PizzaType.Cheese) {
       pizza.type = type;
       pizza.size = size;
       pizza.bread = BreadType.Thick;
-      pizza.cheese = CheezeType.Parmesan;
+      pizza.cheese = CheeseType.Parmesan;
       if (style === PizzaStyle.Italian) {
         pizza.ingredients = [
           Ingredient.Basil,
@@ -48,7 +48,7 @@ export class PizzaStore {
       } else {
         pizza.bread = BreadType.Thick;
       }
-      pizza.cheese = CheezeType.Mozzarella;
+      pizza.cheese = CheeseType.Mozzarella;
       pizza.ingredients = [
         Ingredient.Tomato,
         Ingredient.Onion,
