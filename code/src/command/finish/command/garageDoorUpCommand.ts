@@ -12,3 +12,15 @@ export class GarageDoorUpCommand implements Command {
     this.garageDoor.up();
   }
 }
+
+export class GarageDoorDownCommand implements Command {
+  garageDoor: GarageDoor;
+
+  constructor(garageDoor: GarageDoor) {
+    this.garageDoor = garageDoor;
+  }
+
+  execute() {
+    this.garageDoor.down();
+  }
+}

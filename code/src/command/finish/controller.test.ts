@@ -1,29 +1,47 @@
 import { GarageDoor } from '../begin/devices';
-import { GarageDoorUpCommand } from './command/garageDoorUpCommand';
-import { LightOnCommand } from './command/lightOnCommand';
+import {
+  GarageDoorDownCommand,
+  GarageDoorUpCommand,
+} from './command/garageDoorUpCommand';
+import { LightOffCommand, LightOnCommand } from './command/lightCommand';
 import { Controller } from './controller';
 import { Light } from './devices';
 
 describe('[Command - finish] Controller', () => {
-  it('should execute device taht wrapped with command object', () => {
-    const controller = new Controller();
+  const controller = new Controller();
 
+  it('should turn on and off light with controller', () => {
     // light on
     const light = new Light();
-    const lightSpy = jest.spyOn(light, 'on');
+    jest.spyOn(light, 'on');
+    jest.spyOn(light, 'off');
+
     const lightOnCommand = new LightOnCommand(light);
+    const lightOffCommand = new LightOffCommand(light);
 
     controller.setCommand(lightOnCommand);
     controller.buttonWasPressed();
-    expect(lightSpy).toBeCalled();
+    expect(light.on).toBeCalled();
 
-    // garageDoor up
+    controller.setCommand(lightOffCommand);
+    controller.buttonWasPressed();
+    expect(light.off).toBeCalled();
+  });
+
+  it('should open and close garage door with controller', () => {
     const garageDoor = new GarageDoor();
-    const garageDoorSpy = jest.spyOn(garageDoor, 'up');
+    jest.spyOn(garageDoor, 'up');
+    jest.spyOn(garageDoor, 'down');
+
     const garageDoorUpCommand = new GarageDoorUpCommand(garageDoor);
+    const garageDoorDownCommand = new GarageDoorDownCommand(garageDoor);
 
     controller.setCommand(garageDoorUpCommand);
     controller.buttonWasPressed();
-    expect(garageDoorSpy).toBeCalled();
+    expect(garageDoor.up).toBeCalled();
+
+    controller.setCommand(garageDoorDownCommand);
+    controller.buttonWasPressed();
+    expect(garageDoor.down).toBeCalled();
   });
 });
