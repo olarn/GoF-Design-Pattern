@@ -30,7 +30,7 @@ export class WinnerChanceToSpin implements GashaponState {
     this.gashapon.setState(
       this.gashapon.getRemainCapsule() === 0
         ? GashaponMachineState.outOfCapsule
-        : GashaponMachineState.ready,
+        : GashaponMachineState.ready
     );
 
     return returnCapsules;
