@@ -28,7 +28,7 @@ describe('[Strategy - begin] Generate monthly billing based-on total hours and p
   it('should always return 0 for unknown package', () => {
     // given
     const totalHours = 10;
-    const packageType = 'UNKNOWN';
+    const packageType = PackageType.UNKNOWN;
 
     // when
     const billing = new Billing(totalHours, packageType);

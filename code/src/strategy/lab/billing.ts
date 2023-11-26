@@ -8,9 +8,9 @@ export enum PackageType {
 export class Billing {
   private vatRate = 7.0;
   private totalHours: number;
-  private packageType: string;
+  private packageType: PackageType;
 
-  constructor(totalHours: number, packageType: string) {
+  constructor(totalHours: number, packageType: PackageType) {
     this.totalHours = totalHours;
     this.packageType = packageType;
   }
