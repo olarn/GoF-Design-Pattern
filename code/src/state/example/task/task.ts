@@ -57,6 +57,10 @@ export class Task {
     return this.reviewBy;
   }
 
+  getRejectBy(): string | undefined {
+    return this.rejectBy;
+  }
+
   getRejectReason(): string | undefined {
     return this.rejectReason;
   }

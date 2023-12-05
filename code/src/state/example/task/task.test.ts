@@ -11,6 +11,7 @@ describe('[State - example] Task', () => {
 
     task.reject('Daenerys Targaryen', 'Not enough business value supported.');
     expect(task.getState()).toBe(TaskStatus.Rejected);
+    expect(task.getRejectBy()).toBe('Daenerys Targaryen');
     expect(task.getRejectReason()).toBe('Not enough business value supported.');
   });
 
