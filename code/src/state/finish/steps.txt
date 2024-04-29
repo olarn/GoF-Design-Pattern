@@ -1,5 +1,5 @@
 1. Create interface class "GashaponState" :- insertCoin, ejectCoins, and spin.
-2. Create Concrete classes for readyState, hasCoinState, readyToSpin, outOfCapsuleState that comform interface class.
+2. Create Concrete classes for readyState, hasCoinState, readyToSpin, outOfCapsuleState that conform interface class.
 3. Create key/values in Gashapon class to store states (avoid circular reference).
 
     private state: GashaponMachineState = GashaponMachineState.outOfCapsule;
