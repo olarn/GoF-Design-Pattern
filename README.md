@@ -1,4 +1,10 @@
-To run test (and watch) :- 
+To run dev environment with nix, run...
+```
+nix-shell
+```
+For more information about nix, see https://nixos.org
+
+To run test (and watch), goto folder /code and run:- 
 ```
 npm run test
 ```
