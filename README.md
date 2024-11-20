@@ -41,7 +41,7 @@ Get-ChildItem -Directory -Recurse -Filter "begin","finish" | Remove-Item -Recurs
 ### Prerequisites
 - Node.js
 - Nix (optional)
-- StarUML (for viewing diagrams)
+- StarUML (optional - for viewing diagrams)
 
 ### Development Environment
 
