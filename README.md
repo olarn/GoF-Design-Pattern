@@ -28,12 +28,14 @@ To remove `begin` and `finish` folders:
 
 For Unix/Linux/MacOS:
 ```bash
-find . -type d \( -name "begin" -o -name "finish" \) -exec rm -rf {} +
+find . -type d \( -name "begin" -o -name "finish" \) \
+    -exec rm -rf {} +
 ```
 
 For Windows (PowerShell):
 ```powershell
-Get-ChildItem -Directory -Recurse -Filter "begin","finish" | Remove-Item -Recurse -Force
+Get-ChildItem -Directory -Recurse -Filter "begin","finish" | 
+    Remove-Item -Recurse -Force
 ```
 
 ## Project Setup
