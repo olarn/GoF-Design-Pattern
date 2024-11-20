@@ -1,6 +1,6 @@
 # Design Patterns Code Kata
 
-This project contains implementations of Gang-of-Four Design Patterns, based on examples from the Head First Design Patterns book. Each pattern is organized in its own directory under the `code` folder.
+This project contains implementations of Gang-of-Four Design Patterns, based on examples from the Head First Design Patterns book with NodeJS and Typescript. Each pattern is organized in its own directory under the `code` folder.
 
 ## Project Structure
 Each design pattern folder contains three sub-directories:
