@@ -22,7 +22,7 @@ describe('[Strategy - finish] Generate monthly billing based-on total hours and 
     expect(billing.monthlyBill()).toBe(535);
   });
 
-  it('should always return 0 for unknown package', () => {
+  it('should throw exception for unknown package', () => {
     // given
     const totalHours = 10;
     const packageType = PackageType.UNKNOWN;

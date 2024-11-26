@@ -1,0 +1,5 @@
+Refactoring Steps
+1. Create IPackage as an interface class for Package.
+2. Extract existing calculation code (in each if/else) by create concrete classes for fixed, hour-flex.
+3. Change monthlyBilling() code to use IPackage.
+4. Refactor monthlyBilling() to use factory class.

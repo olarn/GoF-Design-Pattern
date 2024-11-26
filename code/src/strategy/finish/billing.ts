@@ -13,7 +13,7 @@ export class Billing {
 
   public monthlyBill(): number {
     var total = PackageFactory.buildPackage(this.packageType).monthlyBill(
-      this.totalHours,
+      this.totalHours
     );
     return this.monthlyBillingIncludingVAT(total);
   }

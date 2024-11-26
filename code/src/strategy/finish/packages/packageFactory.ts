@@ -1,4 +1,4 @@
-import { EmptyPackage } from './emptyPackage';
+import { UnknownBillingStrategy } from './unknownBillingStrategy';
 import { FixedPackage } from './fixedPackage';
 import { HourFlexPackage } from './hourFlexPackage';
 import { PackageType } from './packageType';
@@ -17,6 +17,6 @@ export class PackageFactory {
       return new SteppingPackage();
     }
 
-    return new EmptyPackage();
+    return new UnknownBillingStrategy();
   }
 }

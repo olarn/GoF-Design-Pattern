@@ -36,4 +36,11 @@ describe('[Strategy - begin] Generate monthly billing based-on total hours and p
     // then
     expect(billing.monthlyBill()).toBe(0);
   });
+
+  it('should return 80.25 for stepping package', () => {
+    // apply strategy before add test & code
+  });
+  it('should return 50 for stepping package', () => {
+    // apply strategy before add test & code
+  });
 });
