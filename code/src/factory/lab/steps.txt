@@ -1,0 +1,11 @@
+Change Requests
+
+1. Pizza Onwer want to sell more different sizes of pizza. Including small, medium, and large. 
+2. The small size has 4 pieces, medium size has 6 pieces, and large size has 8 pieces.
+3. Pizza Onwer want to add more menu. Such as Pepperoni, Hawaiian, Tomyam, Green Kerry, and more in the near future.
+
+Steps
+1. Refactor to add factory pattern.
+2. Add test for another size.
+3. Fix code to support different size.
+4. Add more pizza types.
