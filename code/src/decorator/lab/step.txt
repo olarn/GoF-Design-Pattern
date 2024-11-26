@@ -1,0 +1,7 @@
+Implement caching layer
+1. Add CachedCustomerApi to implement caching.
+2. Add test for CachedCustomerApi.
+
+Implement encrypted layer
+3. Add EncryptedCustomerApi to implement field encryption.
+4. Add test for EncryptedCustomerApi.
