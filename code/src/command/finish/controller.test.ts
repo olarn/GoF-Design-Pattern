@@ -21,11 +21,11 @@ describe('[Command - finish] Controller', () => {
 
     controller.setCommand(lightOnCommand);
     controller.buttonWasPressed();
-    expect(light.on).toBeCalled();
+    expect(light.on).toHaveBeenCalled();
 
     controller.setCommand(lightOffCommand);
     controller.buttonWasPressed();
-    expect(light.off).toBeCalled();
+    expect(light.off).toHaveBeenCalled();
   });
 
   it('should open and close garage door with controller', () => {
@@ -38,10 +38,10 @@ describe('[Command - finish] Controller', () => {
 
     controller.setCommand(garageDoorUpCommand);
     controller.buttonWasPressed();
-    expect(garageDoor.up).toBeCalled();
+    expect(garageDoor.up).toHaveBeenCalled();
 
     controller.setCommand(garageDoorDownCommand);
     controller.buttonWasPressed();
-    expect(garageDoor.down).toBeCalled();
+    expect(garageDoor.down).toHaveBeenCalled();
   });
 });
