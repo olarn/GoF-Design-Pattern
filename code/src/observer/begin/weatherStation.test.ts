@@ -21,4 +21,8 @@ describe('[Observer - begin] Weather station measurement changed', () => {
       'Forecast: More of the same'
     );
   });
+
+  it('should notify observers to display current weather condition', () => {
+    // apply pattern before add test & code
+  });
 });
