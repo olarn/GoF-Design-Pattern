@@ -1,0 +1,8 @@
+Observer refactoring Steps
+
+1. Add WeatherObserver interface class.
+2. Add WeatherObserver interface implementation classes 
+    - WeatherForcast
+    - CurrentWeatherConditions 
+    - WeatherStatistic
+3. Refactor WeatherStation to use observer objects. 
