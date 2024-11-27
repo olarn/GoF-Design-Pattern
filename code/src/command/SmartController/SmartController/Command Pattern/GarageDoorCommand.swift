@@ -1,24 +1,21 @@
-//
-//  GarageDoorCommand.swift
-//  SmartController
-//
-//  Created by Olarn U. on 14/9/2566 BE.
-//
-
 import Foundation
 
-struct GarageDoorUpCommand: Command {
+struct GarageDoorUpCommand: CommandProtocol {
     var title: String = "up"
     
     func execute() {
-        print("Garage door is up!")
+        print("\nGarage door light is on")
+        print("Garage door is starting \(title)...")
+        print("Garage door is openned.")
     }
 }
 
-struct GarageDoorDownCommand: Command {
+struct GarageDoorDownCommand: CommandProtocol {
     var title: String = "down"
     
     func execute() {
-        print("Garage door is down!")
+        print("\nGarage door is starting \(title)...")
+        print("Garage door shutted down.")
+        print("Garage door light is off.")
     }
 }

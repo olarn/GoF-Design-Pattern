@@ -13,7 +13,7 @@
 		3779B27C2AB2EA570004FBE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3779B27A2AB2EA570004FBE2 /* Main.storyboard */; };
 		3779B27E2AB2EA580004FBE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3779B27D2AB2EA580004FBE2 /* Assets.xcassets */; };
 		3779B2812AB2EA580004FBE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3779B27F2AB2EA580004FBE2 /* LaunchScreen.storyboard */; };
-		3779B28A2AB2F08C0004FBE2 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779B2892AB2F08C0004FBE2 /* Command.swift */; };
+		3779B28A2AB2F08C0004FBE2 /* CommandProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779B2892AB2F08C0004FBE2 /* CommandProtocol.swift */; };
 		3779B28C2AB2F0AA0004FBE2 /* LightCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779B28B2AB2F0AA0004FBE2 /* LightCommand.swift */; };
 		3779B28E2AB2F0F40004FBE2 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779B28D2AB2F0F40004FBE2 /* Controller.swift */; };
 		3779B2902AB2F1C70004FBE2 /* SimpleOnOffTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779B28F2AB2F1C70004FBE2 /* SimpleOnOffTableViewCell.swift */; };
@@ -30,7 +30,7 @@
 		3779B27D2AB2EA580004FBE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3779B2802AB2EA580004FBE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3779B2822AB2EA580004FBE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3779B2892AB2F08C0004FBE2 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		3779B2892AB2F08C0004FBE2 /* CommandProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandProtocol.swift; sourceTree = "<group>"; };
 		3779B28B2AB2F0AA0004FBE2 /* LightCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightCommand.swift; sourceTree = "<group>"; };
 		3779B28D2AB2F0F40004FBE2 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 		3779B28F2AB2F1C70004FBE2 /* SimpleOnOffTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleOnOffTableViewCell.swift; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				3779B28D2AB2F0F40004FBE2 /* Controller.swift */,
-				3779B2892AB2F08C0004FBE2 /* Command.swift */,
+				3779B2892AB2F08C0004FBE2 /* CommandProtocol.swift */,
 				3779B28B2AB2F0AA0004FBE2 /* LightCommand.swift */,
 				37E964E92AB2F71F003BB0D2 /* GarageDoorCommand.swift */,
 			);
@@ -186,7 +186,7 @@
 				37E24C892AB3030C001B01AC /* AddControllerViewController.swift in Sources */,
 				3779B28E2AB2F0F40004FBE2 /* Controller.swift in Sources */,
 				37E964EA2AB2F71F003BB0D2 /* GarageDoorCommand.swift in Sources */,
-				3779B28A2AB2F08C0004FBE2 /* Command.swift in Sources */,
+				3779B28A2AB2F08C0004FBE2 /* CommandProtocol.swift in Sources */,
 				3779B2902AB2F1C70004FBE2 /* SimpleOnOffTableViewCell.swift in Sources */,
 				3779B28C2AB2F0AA0004FBE2 /* LightCommand.swift in Sources */,
 			);

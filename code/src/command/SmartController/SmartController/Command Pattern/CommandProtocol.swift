@@ -1,6 +1,7 @@
 import Foundation
 
-protocol Command {
+// interface class
+protocol CommandProtocol {
     var title: String { get set }
     func execute()
 }

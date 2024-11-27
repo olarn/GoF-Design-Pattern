@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  SmartController
-//
-//  Created by Olarn U. on 14/9/2566 BE.
-//
-
 import UIKit
 
 @main

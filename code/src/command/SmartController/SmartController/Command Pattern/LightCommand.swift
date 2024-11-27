@@ -1,15 +1,15 @@
 import Foundation
 
-struct LightOnCommand: Command {
+struct LightOnCommand: CommandProtocol {
     var title: String = "on"
     func execute() {
-        print("Light on is press!")
+        print("\nLight on is press!")
     }
 }
 
-struct LightOffCommand: Command {
+struct LightOffCommand: CommandProtocol {
     var title: String = "off"
     func execute() {
-        print("Light off is press!")
+        print("\nLight off is press!")
     }
 }

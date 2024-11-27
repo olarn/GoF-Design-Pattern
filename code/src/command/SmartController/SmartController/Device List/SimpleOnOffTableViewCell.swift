@@ -1,10 +1,3 @@
-//
-//  TableViewCell.swift
-//  SmartController
-//
-//  Created by Olarn U. on 14/9/2566 BE.
-//
-
 import UIKit
 
 class SimpleOnOffTableViewCell: UITableViewCell {
@@ -22,12 +15,12 @@ class SimpleOnOffTableViewCell: UITableViewCell {
     }
 
     @IBAction func onSwitchTouched(_ sender: Any) {
-        let onCommand: Command? = controller.commands[0]
+        let onCommand: CommandProtocol? = controller.commands[0]
         onCommand?.execute()
     }
     
     @IBAction func offSwitchTouched(_ sender: Any) {
-        let offCommand: Command? = controller.commands[1]
+        let offCommand: CommandProtocol? = controller.commands[1]
         offCommand?.execute()
     }
 }
