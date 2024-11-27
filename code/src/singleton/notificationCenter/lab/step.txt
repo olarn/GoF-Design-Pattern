@@ -1,0 +1,1 @@
+Use the Singleton pattern to implement a Notification Center class that ensures only a single instance is created, and pass unit test.
