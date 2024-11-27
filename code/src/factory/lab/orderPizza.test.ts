@@ -1,6 +1,5 @@
 import { PizzaSize, PizzaStyle, PizzaType } from './pizza';
 import { PizzaStore } from './pizzaStore';
-
 describe('[Factory - lab] OrderPizza from pizza store', () => {
   it('should return an Italian pizza', () => {
     const pizzaStore = new PizzaStore();
@@ -36,5 +35,17 @@ describe('[Factory - lab] OrderPizza from pizza store', () => {
     expect(pizza.description()).toBe(
       'Pizza Seafood, Small, Thick, Mozzarella, Tomato, Onion, Shrimp, Tuna'
     );
+  });
+
+  it('should return an American classic pizza', () => {
+    //
+  });
+
+  it('should return an American cheese pizza', () => {
+    //
+  });
+
+  it('should return an Italian seafood pizza', () => {
+    //
   });
 });

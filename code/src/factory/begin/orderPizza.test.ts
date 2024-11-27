@@ -37,4 +37,16 @@ describe('[Factory - begin] OrderPizza from pizza store', () => {
       'Pizza Seafood, Small, Thick, Mozzarella, Tomato, Onion, Shrimp, Tuna'
     );
   });
+
+  it('should return an American classic pizza', () => {
+    //
+  });
+
+  it('should return an American cheese pizza', () => {
+    //
+  });
+
+  it('should return an Italian seafood pizza', () => {
+    //
+  });
 });
