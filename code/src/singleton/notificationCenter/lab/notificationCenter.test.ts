@@ -4,7 +4,7 @@ import { SlackObserver } from './observers/slackObserver';
 import { TelegramObserver } from './observers/telegramObserver';
 
 describe('[Singleton - lab] NotificationCenter', () => {
-  it('should notify on Slack and Discord (only 2), not telegram.', () => {
+  it('the notificationCenter should be a singleton', () => {
     // given
     // when
     // then

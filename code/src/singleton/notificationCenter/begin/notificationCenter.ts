@@ -3,15 +3,16 @@ import { Observer } from './observers/observer';
 export class NotificationCenter {
   private observers: Observer[] = [];
 
-  reset() {
+  public reset() {
     this.observers = [];
   }
 
   public addObserver(observer: Observer): void {
-    if (this.observers.length >= 2) {
-      return;
-    }
     this.observers.push(observer);
+  }
+
+  public totalObservers(): number {
+    return this.observers.length;
   }
 
   public postNotification(message: string): void {

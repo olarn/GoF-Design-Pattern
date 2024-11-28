@@ -4,30 +4,32 @@ import { SlackObserver } from './observers/slackObserver';
 import { TelegramObserver } from './observers/telegramObserver';
 
 describe('[Singleton - finish] NotificationCenter', () => {
-  it('should notify on Slack and Discord (only 2), not telegram.', () => {
-    // given
-    const notificationCenter = NotificationCenter.getInstance();
-    notificationCenter.reset();
+  it('the notificationCenter should be a singleton', () => {
+    const firstNotificationCenter = NotificationCenter.getInstance();
+    firstNotificationCenter.reset();
 
     const slack = new SlackObserver();
     const discord = new DiscordObserver();
     const telegram = new TelegramObserver();
 
-    const spyOnSlack = jest.spyOn(slack, 'notify');
-    const spyOnDiscord = jest.spyOn(discord, 'notify');
-    const spyOnTelegram = jest.spyOn(telegram, 'notify');
+    const slackSpy = jest.spyOn(slack, 'notify');
+    const discordSpy = jest.spyOn(discord, 'notify');
+    const telegramSpy = jest.spyOn(telegram, 'notify');
 
-    notificationCenter.addObserver(slack);
-    notificationCenter.addObserver(discord);
-    notificationCenter.addObserver(telegram);
+    firstNotificationCenter.addObserver(slack);
 
-    // when
-    const notiMessage = 'Build failed!!!';
-    notificationCenter.postNotification(notiMessage);
+    expect(firstNotificationCenter.totalObservers()).toBe(1);
 
-    // then
-    expect(spyOnSlack).toBeCalled();
-    expect(spyOnDiscord).toBeCalled();
-    expect(spyOnTelegram).not.toBeCalled();
+    const secondNotificationCenter = NotificationCenter.getInstance();
+    secondNotificationCenter.addObserver(discord);
+    secondNotificationCenter.addObserver(telegram); 
+
+    expect(secondNotificationCenter.totalObservers()).toBe(3);
+
+    firstNotificationCenter.postNotification('Hello');
+
+    expect(slackSpy).toHaveBeenCalledTimes(1);
+    expect(discordSpy).toHaveBeenCalledTimes(1);
+    expect(telegramSpy).toHaveBeenCalledTimes(1);
   });
 });
