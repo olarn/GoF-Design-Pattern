@@ -1,0 +1,15 @@
+For commands... 
+
+1. Create lightCommand.ts
+2. Create class LightOnCommand and LightOffCommand that implement Command interface.
+3. Both class has light as it's attribute and accept it from constructor.
+4. In the "execute()", call light.on(), light.off()
+
+For controller...
+
+5. Add attribute "slot" as a command.
+6. Add setCommand(command) and set slot = command
+7. Implement buttonPressed() to execute command through slot attribute.
+8. Write test to test controller and command objects.
+
+Repeat for garageCommand
