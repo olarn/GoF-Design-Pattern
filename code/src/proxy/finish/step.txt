@@ -1,0 +1,14 @@
+Requirements
+  - Our customer hire us to implement a Digital Billboard.
+  - It should rotating display contents.
+  - It will download the contents from the server.
+  - However, the server-side system is not yet ready, but our management doesn't want to delay progress.
+  - At the current stage of development, the team has already implemented the Billboard and contentStore, which currently always return three pieces of content.
+
+While we're waiting...
+  - We need to implement content caching in the contentStore to avoid downloading the contents from the server every time.. 
+
+Steps
+1. Create new proxy class, named "ProxyContentStore".
+2. The ProxyContentStore constructor should accept ContentStore.
+3. Implement caching inside ProxyContentStore.
