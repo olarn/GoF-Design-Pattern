@@ -51,6 +51,7 @@ Get-ChildItem -Directory -Recurse -Filter "begin","finish" |
 - Typescript
 - Nix (optional)
 - StarUML (optional - for viewing diagrams)
+- Recommended plugins :- VSCode Jest https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest
 
 ### Development Environment
 
