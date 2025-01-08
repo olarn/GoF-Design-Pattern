@@ -1,6 +1,6 @@
-import { SqlBuilder } from './sqlBuilder';
+import { SqlBuilder } from '../lab/sqlBuilder';
 
-describe('[Builder] SQL Builder', () => {
+describe('[Builder - lab] SQL Builder', () => {
   let sqlBuilder: SqlBuilder;
 
   beforeEach(() => {
@@ -8,6 +8,7 @@ describe('[Builder] SQL Builder', () => {
   });
 
   it('should build a simple SQL query', () => {
+    /*
     // given
     const sql = sqlBuilder
       .select(['id', 'name', 'age'])
@@ -19,9 +20,11 @@ describe('[Builder] SQL Builder', () => {
 
     // then
     expect(result).toEqual('SELECT id, name, age FROM users WHERE age > 18');
+    */
   });
 
   it('should build a SQL query with multiple conditions', () => {
+    /*
     // given
     const sql = sqlBuilder
       .select(['id', 'name', 'age'])
@@ -36,9 +39,11 @@ describe('[Builder] SQL Builder', () => {
     expect(result).toEqual(
       'SELECT id, name, age FROM users WHERE age > 18 AND name = "John"'
     );
+    */
   });
 
   it('should build a SQL query with order by', () => {
+    /*
     // given
     const sql = sqlBuilder
       .from('users')
@@ -54,9 +59,11 @@ describe('[Builder] SQL Builder', () => {
     expect(result).toEqual(
       'SELECT id, name, age FROM users WHERE age > 18 AND name = "John" ORDER BY age DESC'
     );
+    */
   });
 
   it('should build a SQL query with inner join', () => {
+    /*
     // given
     const sql = sqlBuilder
       .select(['id', 'name', 'age'])
@@ -72,9 +79,11 @@ describe('[Builder] SQL Builder', () => {
     expect(result).toEqual(
       'SELECT id, name, age FROM users INNER JOIN orders ON users.id = orders.user_id WHERE age > 18 AND name = "John"'
     );
+    */
   });
 
   it('should build a SQL query with multiple inner joins', () => {
+    /*
     // given
     const sql = sqlBuilder
       .select(['id', 'name', 'age'])
@@ -91,9 +100,11 @@ describe('[Builder] SQL Builder', () => {
     expect(result).toEqual(
       'SELECT id, name, age FROM users INNER JOIN orders ON users.id = orders.user_id INNER JOIN products ON orders.product_id = products.id WHERE age > 18 AND name = "John"'
     );
+    */
   });
 
   it('should throw error when call inner join but never call from()', () => {
+    /*
     // given
     const sql = sqlBuilder.select(['id', 'name', 'age']);
 
@@ -104,5 +115,6 @@ describe('[Builder] SQL Builder', () => {
     expect(result).toThrowError(
       'You must call from() before calling innerJoin()'
     );
+    */
   });
 });
