@@ -15,7 +15,7 @@ describe('[finish] Knight', () => {
   });
 
   test('should ba able equip only sword', () => {
-    expect(() => knight.equip(new OakStaff())).toThrowError(
+    expect(() => knight.equip(new OakStaff())).toThrow(
       'Knight can only equip sword'
     );
   });

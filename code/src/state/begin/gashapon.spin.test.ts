@@ -14,13 +14,13 @@ describe('[State - begin] Spin Gashapon', () => {
     gashapon.reload([new GashaponCapsule('Luffy')]);
 
     // when -> then
-    expect(() => gashapon.spin()).toThrowError('Please insert more coin');
+    expect(() => gashapon.spin()).toThrow('Please insert more coin');
     gashapon.insertCoin();
-    expect(() => gashapon.spin()).toThrowError('Please insert more coin');
+    expect(() => gashapon.spin()).toThrow('Please insert more coin');
   });
 
   it('should throw error if spin while state is `outOfCapsule`', () => {
-    expect(() => gashapon.spin()).toThrowError(
+    expect(() => gashapon.spin()).toThrow(
       'Cannot spin when out of capsule'
     );
   });

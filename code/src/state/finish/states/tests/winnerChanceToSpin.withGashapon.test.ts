@@ -67,7 +67,7 @@ describe('Gashapon + state Winner Chance to Spin ', () => {
     gashapon.insertCoin();
 
     expect(gashapon.getState()).toBe(GashaponMachineState.winnerChanceToSpin);
-    expect(() => gashapon.insertCoin()).toThrowError(
+    expect(() => gashapon.insertCoin()).toThrow(
       'Cannot insert coin when ready to spin',
     );
 

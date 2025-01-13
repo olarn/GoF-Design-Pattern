@@ -12,7 +12,7 @@ describe('[State - begin] Gashapon Machine', () => {
   });
 
   it('usage in real world', () => {
-    expect(() => gashapon.ejectCoins()).toThrowError(
+    expect(() => gashapon.ejectCoins()).toThrow(
       "You haven't insert any coin"
     );
 
@@ -22,12 +22,12 @@ describe('[State - begin] Gashapon Machine', () => {
     expect(gashapon.getCoins()).toBe(0);
 
     gashapon.insertCoin();
-    expect(() => gashapon.spin()).toThrowError('Please insert more coin');
+    expect(() => gashapon.spin()).toThrow('Please insert more coin');
     gashapon.insertCoin();
     gashapon.insertCoin();
     gashapon.insertCoin();
     expect(gashapon.getCoins()).toBe(4);
-    expect(() => gashapon.insertCoin()).toThrowError(
+    expect(() => gashapon.insertCoin()).toThrow(
       'Cannot insert coin when ready to spin'
     );
     expect(gashapon.ejectCoins()).toBe(4);
@@ -47,13 +47,13 @@ describe('[State - begin] Gashapon Machine', () => {
 
     expect(gashapon.getState()).toBe('outOfCapsule');
     expect(gashapon.getRemainCapsule()).toBe(0);
-    expect(() => gashapon.insertCoin()).toThrowError(
+    expect(() => gashapon.insertCoin()).toThrow(
       'Cannot insert coin when out of capsule'
     );
-    expect(() => gashapon.spin()).toThrowError(
+    expect(() => gashapon.spin()).toThrow(
       'Cannot spin when out of capsule'
     );
-    expect(() => gashapon.ejectCoins()).toThrowError(
+    expect(() => gashapon.ejectCoins()).toThrow(
       "You haven't insert any coin"
     );
   });

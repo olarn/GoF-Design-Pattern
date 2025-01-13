@@ -32,7 +32,7 @@ describe('[State - begin] Insert coins', () => {
     gashapon.insertCoin();
 
     // when -> then
-    expect(() => gashapon.insertCoin()).toThrowError(
+    expect(() => gashapon.insertCoin()).toThrow(
       'Cannot insert coin when ready to spin'
     );
   });
@@ -54,7 +54,7 @@ describe('[State - begin] Insert coins', () => {
   });
 
   it('should throw error if insert coin and current state is `outOfStock`', () => {
-    expect(() => gashapon.insertCoin()).toThrowError(
+    expect(() => gashapon.insertCoin()).toThrow(
       'Cannot insert coin when out of capsule'
     );
   });

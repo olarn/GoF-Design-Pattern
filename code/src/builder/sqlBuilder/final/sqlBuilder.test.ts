@@ -101,7 +101,7 @@ describe('[Builder - final] SQL Builder', () => {
     const result = () => sql.innerJoin('orders', 'users.id = orders.user_id');
 
     // then
-    expect(result).toThrowError(
+    expect(result).toThrow(
       'You must call from() before calling innerJoin()'
     );
   });

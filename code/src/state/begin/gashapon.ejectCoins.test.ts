@@ -28,13 +28,13 @@ describe('[State - begin] Eject coins', () => {
     gashapon.reload([new GashaponCapsule('Luffy')]);
 
     // when -> then
-    expect(() => gashapon.ejectCoins()).toThrowError(
+    expect(() => gashapon.ejectCoins()).toThrow(
       "You haven't insert any coin"
     );
   });
 
   it('should throw error if eject coins when state is `outOfCapsule`', () => {
-    expect(() => gashapon.ejectCoins()).toThrowError(
+    expect(() => gashapon.ejectCoins()).toThrow(
       "You haven't insert any coin"
     );
   });

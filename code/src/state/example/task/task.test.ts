@@ -19,7 +19,7 @@ describe('[State - example] Task', () => {
     const task = new Task();
     expect(() => {
       task.reject('Daenerys Targaryen', 'Not enough business value supported.');
-    }).toThrowError('Task is not in RequestToApprove state');
+    }).toThrow('Task is not in RequestToApprove state');
   });
 
   it('should throw error when review task that is not in Opened state', () => {
@@ -29,7 +29,7 @@ describe('[State - example] Task', () => {
 
     expect(() => {
       task.review('John Snow');
-    }).toThrowError('Task is not in Opened state');
+    }).toThrow('Task is not in Opened state');
   });
 
   it('state should be Approved when manager approve task', () => {
@@ -45,7 +45,7 @@ describe('[State - example] Task', () => {
     const task = new Task();
     expect(() => {
       task.approve('Daenerys Targaryen');
-    }).toThrowError('Task is not in RequestToApprove state');
+    }).toThrow('Task is not in RequestToApprove state');
   });
 
   it('state should become `In Progress` when staff perform task', () => {
@@ -62,7 +62,7 @@ describe('[State - example] Task', () => {
     const task = new Task();
     expect(() => {
       task.performTask('John Snow');
-    }).toThrowError('Task is not in Approved state');
+    }).toThrow('Task is not in Approved state');
   });
 
   it('state should become `finish` when staff finish task', () => {
@@ -79,6 +79,6 @@ describe('[State - example] Task', () => {
     const task = new Task();
     expect(() => {
       task.finish();
-    }).toThrowError('Task is not in InProgress state');
+    }).toThrow('Task is not in InProgress state');
   });
 });

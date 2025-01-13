@@ -71,7 +71,7 @@ describe('Workflow withClass', () => {
     const data = {
       currentStep: '4',
     };
-    expect(() => workflow.getNextSteps(data)).toThrowError('Step not found: 4');
+    expect(() => workflow.getNextSteps(data)).toThrow('Step not found: 4');
   });
 
   it('should return finish if data.isValid and data.isInStock are true', () => {
