@@ -65,6 +65,16 @@ nix-shell
 
 For more information about Nix, visit [nixos.org](https://nixos.org)
 
+### DevBox
+
+To set up the development environment using DevBox:
+
+```bash
+devbox shell
+```
+
+For more information about DevBox, visit [devbox.com](https://devbox.com)
+
 ## Running the Project
 
 ### Tests
